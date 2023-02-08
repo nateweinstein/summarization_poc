@@ -1,0 +1,674 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="google-site-verification" content="P0GXb2pbBqt8KUgYlOlJ1WQIEIKCcv82t4HIeTqinPk" />
+<link rel="stylesheet" href="https://use.typekit.net/kie2zie.css">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://a16z.com/xmlrpc.php">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.11 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>Web3 Security: Attack Types and Lessons Learned</title>
+	<meta name="description" content="An overview of the biggest recent crypto hacks – from phishing to governance attacks – to help better understand and improve web3 security." />
+	<link rel="canonical" href="https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="Web3 Security: Attack Types and Lessons Learned | Andreessen Horowitz" />
+	<meta property="og:description" content="An overview of the biggest recent crypto hacks – from phishing to governance attacks – to help better understand and improve web3 security." />
+	<meta property="og:url" content="https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/" />
+	<meta property="og:site_name" content="Andreessen Horowitz" />
+	<meta property="article:published_time" content="2022-04-23T14:50:14+00:00" />
+	<meta property="article:modified_time" content="2022-06-02T21:12:37+00:00" />
+	<meta property="og:image" content="https://a16z.com/wp-content/uploads/2022/04/Web3-Blog-Yoast_Facebook.jpeg" />
+	<meta property="og:image:width" content="1200" />
+	<meta property="og:image:height" content="630" />
+	<meta property="og:image:type" content="image/jpeg" />
+	<meta name="author" content="Riyaz Faizullabhoy, Matt Gleason" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:image" content="https://a16z.com/wp-content/uploads/2022/04/Web3-Blog-Yoast_Twitter.jpeg" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Riyaz Faizullabhoy and Matt Gleason" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="9 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/","url":"https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/","name":"Web3 Security: Attack Types and Lessons Learned | Andreessen Horowitz","isPartOf":{"@id":"https://a16z.com/#website"},"primaryImageOfPage":{"@id":"https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/#primaryimage"},"image":{"@id":"https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/#primaryimage"},"thumbnailUrl":"https://a16z.com/wp-content/uploads/2022/04/Web3-Blog-Yoast_Twitter.jpeg","datePublished":"2022-04-23T14:50:14+00:00","dateModified":"2022-06-02T21:12:37+00:00","author":{"@id":"https://a16z.com/#/schema/person/a809bb690a35fee38d63e0acae3acf03"},"description":"An overview of the biggest recent crypto hacks – from phishing to governance attacks – to help better understand and improve web3 security.","breadcrumb":{"@id":"https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/"]}]},{"@type":"ImageObject","inLanguage":"en-US","@id":"https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/#primaryimage","url":"https://a16z.com/wp-content/uploads/2022/04/Web3-Blog-Yoast_Twitter.jpeg","contentUrl":"https://a16z.com/wp-content/uploads/2022/04/Web3-Blog-Yoast_Twitter.jpeg","width":1024,"height":512},{"@type":"BreadcrumbList","@id":"https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://a16z.com/"},{"@type":"ListItem","position":2,"name":"Web3 Security: Attack Types and Lessons Learned"}]},{"@type":"WebSite","@id":"https://a16z.com/#website","url":"https://a16z.com/","name":"Andreessen Horowitz","description":"Software Is Eating the World","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://a16z.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://a16z.com/#/schema/person/a809bb690a35fee38d63e0acae3acf03","name":"rhackett2","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://a16z.com/#/schema/person/image/8ce2cde3fa3d2fb8eeb5dd17938ae62f","url":"https://secure.gravatar.com/avatar/7280ca65c28095958fd5cebce9c9d428?s=96&d=identicon&r=g","contentUrl":"https://secure.gravatar.com/avatar/7280ca65c28095958fd5cebce9c9d428?s=96&d=identicon&r=g","caption":"rhackett2"},"url":"https://a16z.com/author/rhackett2/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//cdn.optimizely.com' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//munchkin.marketo.net' />
+<link rel='dns-prefetch' href='//info.a16z.com' />
+<meta name='description' content='An overview of the biggest recent crypto hacks – from phishing to governance attacks – to help better understand and improve the state of web3 security.' /><!-- WP SEO -->
+<meta name='keywords' content='web3 security, crypto hacks, crypto hacking, web3 hacks, crypto security, hacking, protocol hack, ronin hack, axie hack, opensea phishing, crypto phishing, apts, wallet security, beanstalk, defi security, flash loan attack, crypto vulns, crypto vulnerabilities, crypto bugs, web3 vulns, web3 vulnerabilities, web3 bugs, web3 exploits, crypto exploits, governance attack, software supply chain attack, phishing attack, zero day attack, zero days, crypto zero day, web3 zero day, oracle attack, oracle price attack, crypto market manipulation, security trends, crypto security trends, web3 security trends' /><!-- WP SEO -->
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/a16z.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://c0.wp.com/c/6.1.1/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://c0.wp.com/c/6.1.1/wp-includes/css/classic-themes.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='bcct_style-css' href='https://a16z.com/wp-content/plugins/better-click-to-tweet/assets/css/styles.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-parsely-style-css' href='https://a16z.com/wp-content/plugins/wp-parsely/wp-parsely.css?ver=1675354413' type='text/css' media='all' />
+<link rel='stylesheet' id='a16z-global-css' href='https://a16z.com/wp-content/themes/a16z-2015/client/build/css/global.27d2220000a030c51900.min.css?ver=1.03' type='text/css' media='all' />
+<link rel='stylesheet' id='a16z-single-css-css' href='https://a16z.com/wp-content/themes/a16z-2015/client/build/css/single.9017045666e734ff8bb2.min.css?ver=1.03' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='https://c0.wp.com/p/jetpack/8.6/css/jetpack.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://c0.wp.com/c/6.1.1/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/6.1.1/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='jetpack_related-posts-js-extra'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://c0.wp.com/p/jetpack/8.6/_inc/build/related-posts/related-posts.min.js' id='jetpack_related-posts-js'></script>
+<script type='text/javascript' src='https://cdn.optimizely.com/js/15432930010.js?ver=1.01' id='optimizely-js'></script>
+<script type='text/javascript' src='//info.a16z.com/js/forms2/js/forms2.min.js?ver=1.0' id='marketo-newsletter-js'></script>
+<link rel="https://api.w.org/" href="https://a16z.com/wp-json/" /><link rel="alternate" type="application/json" href="https://a16z.com/wp-json/wp/v2/posts/310689" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://a16z.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://a16z.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://wp.me/pa0Syt-1iP7' />
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+<!-- BEGIN wp-parsely Plugin Version 1.14 -->
+<meta name="wp-parsely_version" id="wp-parsely_version" content="1.14"/>
+			<script type="application/ld+json">
+		{"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/a16z.com\/2022\/04\/23\/web3-security-crypto-hack-attack-lessons\/"},"headline":"Web3 Security: Attack Types and Lessons Learned","url":"http:\/\/a16z.com\/2022\/04\/23\/web3-security-crypto-hack-attack-lessons\/","thumbnailUrl":"https:\/\/a16z.com\/wp-content\/uploads\/2022\/04\/Web3-Blog-Yoast_Twitter-150x150.jpeg","image":{"@type":"ImageObject","url":"https:\/\/a16z.com\/wp-content\/uploads\/2022\/04\/Web3-Blog-Yoast_Twitter-150x150.jpeg"},"dateCreated":"2022-04-23T14:50:14Z","datePublished":"2022-04-23T14:50:14Z","dateModified":"2022-04-23T14:50:14Z","articleSection":"crypto","author":[{"@type":"Person","name":"Riyaz Faizullabhoy"},{"@type":"Person","name":"Matt Gleason"}],"creator":["Riyaz Faizullabhoy","Matt Gleason"],"keywords":["a16z crypto","blockchain","cyberattacks","hacked!"],"publisher":{"@type":"Organization","name":"Andreessen Horowitz","logo":{"@type":"ImageObject","url":"https:\/\/a16z.com\/wp-content\/uploads\/2017\/12\/cropped-a16z-favicon.png"}}}
+		</script>
+
+			<!-- END wp-parsely Plugin Version 1.14 -->
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//i0.wp.com'/>
+<link rel='dns-prefetch' href='//i1.wp.com'/>
+<link rel='dns-prefetch' href='//i2.wp.com'/>
+<link rel='dns-prefetch' href='//c0.wp.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><link rel="alternate" type="application/rss+xml" title="Andreessen Horowitz &raquo; Feed" href="https://a16z.com/feed/" />			<script>
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push(
+					{"segment":"Crypto","author":["Riyaz Faizullabhoy","Matt Gleason"],"type":"post","Tag":["crypto &amp; web3","security &amp; privacy","a16z crypto","blockchain","cyberattacks","hacked!"]}				);
+			</script>
+		<!-- Google Optimize Anti-flicker Snippet -->
+			<script>(function(a,s,y,n,c,h,i,d,e){s.className+=" "+y;h.start=1*new Date;
+			h.end=i=function(){s.className=s.className.replace(RegExp(" ? "+y),"")};
+			(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+			})(window,document.documentElement,"async-hide","dataLayer",4000,
+			{"GTM-WHMSDPX":true});</script>
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+			new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!="dataLayer"?"&amp;l="+l:"";j.async=true;j.src=
+			"https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,"script","dataLayer","GTM-WHMSDPX");</script>    <script type="text/javascript">
+        !function(t,e,c,n,o,r){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},setTimeout(function(){o=e.createElement("script"),r=e.getElementsByTagName("script")[0],o.src=c,r.parentNode.insertBefore(o,r)},0)}(window,document,"https://ext.chtbl.com/trackable.js","trackable");
+
+        // Initialize with your Trackable API key
+        trackable('init', 'b44008f3b116fc2e557d345d36a459ad');
+    </script>
+    <link rel="icon" href="https://a16z.com/wp-content/uploads/2021/02/cropped-favicon-512-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://a16z.com/wp-content/uploads/2021/02/cropped-favicon-512-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://a16z.com/wp-content/uploads/2021/02/cropped-favicon-512-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://a16z.com/wp-content/uploads/2021/02/cropped-favicon-512-1-270x270.png" />
+			<style type="text/css" id="wp-custom-css">
+				#wpstats {
+	display: none;
+}
+
+.wp-content iframe.youtube-player {
+	height: 360px !important;
+}
+
+.wp-video-shortcode div {
+	display: flex;
+	font-size: .938rem;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.wp-video-shortcode .mejs-time {
+	font-size: 11px;
+}
+
+#post-314416 + .bio-lp-newsletter {
+	display: none;
+}			</style>
+		    <style>
+	    .ab-test-b {
+		    display: none !important;
+	    }
+
+	    .ab-test .ab-test-a {
+		    display: none !important;
+	    }
+
+	    .ab-test .ab-test-b {
+		    display: block !important;
+	    }
+    </style>
+</head>
+<body class="post-template-default single single-post postid-310689 single-format-standard">
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+        		
+		<!-- Vertical Pages Rebranded Header -->
+		
+        <!-- Rebranded Header -->
+                <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            body > .site {
+                max-width: none;
+                background: transparent;
+            }
+
+            body .site-content {
+                margin-bottom: 0;
+                padding: 0;
+            }
+        </style>
+
+                        <header id="header" class="header-new">
+                                    <div class="bg-header" style=""></div>
+                        <div class="container">
+                <div class="header-holder">
+                    <div class="logo-wrap">
+                        <a class="logo" href="/">
+                                                            <svg width="210" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 48"><path class="lr0" d="M110.6,29c-5.3,0-9.5,4.1-9.5,9.5s4.3,9.5,9.5,9.5c5.3,0,9.5-4.2,9.5-9.5C120.1,33.1,115.9,29,110.6,29z M110.6,32.8c3.2,0,5.6,2.4,5.6,5.7s-2.5,5.7-5.6,5.7c-3.2,0-5.6-2.4-5.6-5.7C104.9,35.2,107.4,32.8,110.6,32.8z"/><path d="M189.7,41.9v-8.7h4.5v-3.8h-4.5v-5.1l-3.9,1.2v3.9h-3.3v3.8h3.3v8.7c0,4.7,2.4,6.4,8.4,5.6V44C191.2,44.2,189.7,44.2,189.7,41.9z"/><path d="M209.9,43.9H201l8.9-10.7l0,0v-3.6h-13.8v3.6h8.9l-8.9,10.7l0,0v3.7h13.8V43.9z"/><path d="M52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2z"/><path class="lr0" d="M54.2,1.2l4-1.2v25.3h-4v-1.4c-1.8,1.3-4.1,2-6.6,1.8c-4.4-0.4-8.1-4-8.5-8.5c0-0.4-0.1-0.7-0.1-1.1l0,0l0,0l0,0l0,0l0,0l0,0c0-0.3,0-0.6,0.1-0.9c0-0.1,0-0.1,0-0.2l0,0l0,0v-0.1v-0.1c0-0.2,0.1-0.4,0.1-0.6c0-0.1,0-0.2,0.1-0.2v-0.1v-0.1c0-0.2,0.1-0.3,0.1-0.5c0-0.1,0.1-0.2,0.1-0.3l0,0v-0.1l0,0c0.1-0.2,0.1-0.3,0.2-0.5c0-0.1,0.1-0.2,0.1-0.3c0,0,0,0,0-0.1c0.1-0.2,0.2-0.3,0.2-0.5c0.1-0.1,0.1-0.2,0.2-0.3l0,0c0.1-0.1,0.2-0.3,0.3-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.2-0.3,0.3-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.2-0.2,0.4-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.3-0.2,0.4-0.3c0.4-0.2,0.5-0.3,0.6-0.4c0.1-0.1,0.3-0.2,0.4-0.3h0.1C43.7,8,43.8,8,43.9,7.9c0.2-0.1,0.3-0.2,0.5-0.2h0.1l0,0c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.3-0.1,0.5-0.2l0,0l0,0h0.1l0,0c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.3-0.1,0.5-0.1l0,0h0.1h0.1c0.1,0,0.2,0,0.3-0.1c0.2,0,0.4-0.1,0.6-0.1l0,0h0.1c0.1,0,0.1,0,0.2,0c0.3,0,0.7-0.1,1-0.1c2.1,0,4,0.7,5.6,1.8L54.2,1.2L54.2,1.2z M47.4,21.7c3.6,0.8,6.8-2,6.8-5.4v-0.1c0-3.1-2.5-5.6-5.6-5.6c-0.2,0-0.4,0-0.6,0h-0.1l0,0c0,0,0,0-0.1,0s-0.3,0-0.4,0.1h-0.1l0,0l0,0c-0.1,0-0.2,0.1-0.3,0.1s-0.2,0.1-0.2,0.1c-0.1,0-0.2,0.1-0.3,0.1s-0.1,0.1-0.2,0.1c-0.1,0.1-0.2,0.1-0.3,0.2c-0.1,0-0.1,0.1-0.2,0.1c-0.1,0.1-0.2,0.1-0.3,0.2c0,0,0,0-0.1,0l-0.1,0.1c-0.1,0.1-0.2,0.2-0.3,0.3l0,0l0,0l0,0l0,0c0,0,0,0-0.1,0.1s-0.3,0.3-0.4,0.4l0,0l0,0c-0.1,0.1-0.2,0.3-0.3,0.4c0,0,0,0.1-0.1,0.1c0,0,0,0,0,0.1c-0.1,0.1-0.1,0.2-0.2,0.3c0,0.1-0.1,0.1-0.1,0.2l0,0c-0.1,0.1-0.1,0.2-0.1,0.3s-0.1,0.1-0.1,0.2l0,0c0,0.1-0.1,0.2-0.1,0.3s0,0.2-0.1,0.2c0,0.1,0,0.2-0.1,0.4c0,0.1,0,0.2,0,0.2c0,0.1,0,0.3,0,0.4v0.1c0,0.1,0,0.1,0,0.2c0,0.4,0,0.8,0.1,1.3C43.6,19.6,45.3,21.3,47.4,21.7z"/><path d="M14.5,16.2L14.5,16.2L14.5,16.2L14.5,16.2C14.5,16.3,14.5,16.3,14.5,16.2C14.5,16.3,14.5,16.3,14.5,16.2z"/><path class="lr0" d="M15.5,7.3v1.2C14,7.4,12,6.7,10,6.7c-5.6,0-10.1,4.9-9.5,10.6c0.5,4.4,4.1,8,8.5,8.5c2.5,0.2,4.8-0.5,6.6-1.8v1.4h4V7.3H15.5z M15.5,16.3c0,3.5-3.2,6.2-6.8,5.4c-2.1-0.4-3.8-2.1-4.3-4.3c-0.7-3.6,2.1-6.8,5.6-6.8C13,10.6,15.5,13.1,15.5,16.3L15.5,16.3z"/><path d="M131.1,29.2v4.2c-2.6-0.2-5.6,1-5.6,5.1v9.1h-3.9V29.5h3.9v3C126.6,30.1,128.8,29.2,131.1,29.2z"/><path class="lr0" d="M140.5,29c-5.3,0-9.5,4.1-9.5,9.5s4.3,9.5,9.5,9.5c5.3,0,9.5-4.2,9.5-9.5C150.1,33.1,145.9,29,140.5,29z M140.5,32.8c3.2,0,5.6,2.4,5.6,5.7s-2.5,5.7-5.6,5.7c-3.2,0-5.6-2.4-5.6-5.7C134.9,35.2,137.4,32.8,140.5,32.8z"/><path d="M175.8,29.5l-5.7,18.1h-3.8l-3.8-12.2l-3.8,12.2h-3.8l-5.7-18.1h4.1l3.5,12.5l3.8-12.5h3.7l3.8,12.5l3.5-12.5C171.6,29.5,175.8,29.5,175.8,29.5z"/><path d="M181,29.5h-3.9v18.1h3.9V29.5z"/><path d="M69.2,7v4.2c-2.6-0.2-5.6,1-5.6,5.1v9.1h-3.9V7.3h3.9v3C64.7,7.9,66.9,7,69.2,7z"/><path class="lr0" d="M87.1,21.9L87.1,21.9L87.1,21.9L87.1,21.9L87.1,21.9v9.9c1.2-1.9,3.1-2.8,5.6-2.8c4,0,6.9,2.7,6.9,7.4v11.2h-3.9V36.9c0-2.7-1.6-4.2-4-4.2c-2.6,0-4.6,1.5-4.6,5.2v9.7h-3.9V25.1c-1.2,0.5-2.5,0.8-4,0.8c-6,0-9.8-4.1-9.8-9.5s3.9-9.5,9.5-9.5c5.4,0,9.1,4.3,9.1,9.5c0,0.5-0.1,1.1-0.1,1.6H73.4c0.6,2.8,2.9,4.3,5.8,4.3c1.7,0,3-0.6,4-1.4c0.3-0.2,0.5-0.5,0.7-0.8L87.1,21.9z M78.8,10.4c2.4,0,4.6,1.3,5.2,4.4H73.4C73.9,12.1,75.9,10.4,78.8,10.4z"/><path class="lr0" d="M103.3,20c-0.9,1.3-2.5,2.2-4.7,2.2c-2.9,0-5.2-1.4-5.8-4.3h14.4c0.1-0.5,0.1-1.1,0.1-1.6c0-5.2-3.7-9.5-9.1-9.5c-5.7,0-9.5,4.2-9.5,9.5c0,5.4,3.9,9.5,9.8,9.5c3.5,0,6.3-1.5,7.9-3.9L103.3,20z M98.3,10.4c2.4,0,4.6,1.3,5.2,4.4H92.8C93.4,12.1,95.4,10.4,98.3,10.4z"/><path class="lr0" d="M148,22.3c2.2,0,3.8-1,4.7-2.2l3.2,1.9c-1.7,2.5-4.4,3.9-7.9,3.9c-6,0-9.8-4.1-9.8-9.5s3.9-9.5,9.5-9.5c5.4,0,9.1,4.3,9.1,9.5c0,0.5-0.1,1.1-0.1,1.6h-14.4C142.8,20.8,145.1,22.3,148,22.3z M152.8,14.8c-0.5-3.1-2.8-4.4-5.2-4.4c-2.9,0-4.9,1.7-5.5,4.4C142.1,14.8,152.8,14.8,152.8,14.8z"/><path d="M177.1,25.4h3.9v-3.5h-3.9V25.4z"/><path d="M30.6,6.8c-2.5,0-4.4,0.9-5.6,2.8V7.5l0,0V7.2h-3.9v1.5l0,0v16.6H25v-9.7c0-3.7,2-5.2,4.6-5.2c2.5,0,4,1.4,4,4.2v10.7h3.9v-11C37.6,9.6,34.7,6.8,30.6,6.8z"/><path d="M162.6,25.4h-3.9V7.3h3.9v2.3c1.2-1.9,3.1-2.8,5.6-2.8c4,0,6.9,2.7,6.9,7.4v11.1h-3.9V14.7c0-2.7-1.6-4.2-4-4.2c-2.6,0-4.6,1.5-4.6,5.2V25.4z"/><path d="M112.5,12.3c0-1.3,1.2-1.9,2.6-1.9s2.6,0.6,3.3,1.8l3.4-1.7c-1.3-2.3-3.7-3.7-6.7-3.7c-3.7,0-6.6,2.1-6.6,5.5c0,3.8,3.3,4.7,6.1,5.5c2,0.6,3.6,1,3.6,2.4s-1.3,2-3.1,2c-1.7,0-3.1-0.7-3.8-2l-3.5,1.7c1.2,2.4,3.8,3.9,7.2,3.9c3.9,0,7.1-2,7.1-5.6c0-3.9-3.4-4.9-6.1-5.6C114.2,14.1,112.5,13.6,112.5,12.3z"/><path d="M130.2,10.4c-1.4,0-2.6,0.6-2.6,1.9c0,1.4,1.7,1.8,3.6,2.4c2.8,0.8,6.1,1.7,6.1,5.6c0,3.6-3.1,5.6-7.1,5.6c-3.5,0-6-1.5-7.2-3.9l3.5-1.7c0.7,1.3,2,2,3.8,2c1.7,0,3.1-0.6,3.1-2c0-1.3-1.7-1.8-3.6-2.4c-2.8-0.8-6.1-1.7-6.1-5.5c0-3.4,2.9-5.5,6.6-5.5c2.9,0,5.4,1.4,6.7,3.7l-3.4,1.7C132.8,11,131.6,10.4,130.2,10.4z"/></svg>                                                    </a>
+                                                <span class="tagline">It&#039;s time to build</span>
+                    </div>
+                                        <a href="#" class="nav-opener"><span><span class="sr-only">Nav Opener</span></span></a>
+                    <nav id="nav">
+                        <ul>
+	                        	                        	                                                    <li class="">
+                                <a href="/portfolio/">Portfolio</a>
+                                                            </li>
+                            	                        	                                                    <li class=" is-single">
+                                <a href="/team/">Team</a>
+                                                            </li>
+                            	                        	                                                    <li class="has-drop is-single">
+                                <a href="#">Focus Areas</a>
+                                                                    <div class="nav-drop">
+                                        <div class="holder">
+                                            <div class="two-cols">
+                                                                                                <div class="col">
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/american-dynamism/">American Dynamism</a></li>
+	                                                                                                            <li><a href="/bio/">Bio + Health</a></li>
+	                                                                                                            <li><a href="/cultural-leadership-fund/">Cultural Leadership Fund</a></li>
+	                                                                                                            <li><a href="/consumer/">Consumer</a></li>
+	                                                                                                            <li><a href="https://a16zcrypto.com">Crypto</a></li>
+	                                                                                                            <li><a href="/enterprise/">Enterprise</a></li>
+	                                                                                                            <li><a href="/fintech/">Fintech</a></li>
+	                                                                                                            <li><a href="/games/">Games</a></li>
+	                                                                                                            <li><a href="/growth/">Growth</a></li>
+	                                                                                                            <li><a href="/talent-x-opportunity/">Talent x Opportunity</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                                            </li>
+                            	                        	                                                    <li class="has-drop">
+                                <a href="#">Content</a>
+                                                                    <div class="nav-drop">
+                                        <div class="holder">
+                                            <div class="two-cols">
+                                                                                                <div class="col">
+	                                                                                                        <a href="/content/" class="title">Topics</a>
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/category/bio-health/">Bio + Health</a></li>
+	                                                                                                            <li><a href="/category/consumer/">Consumer</a></li>
+	                                                                                                            <li><a href="/category/the-creator-economy/">Creator Economy</a></li>
+	                                                                                                            <li><a href="/category/marketplaces/">Marketplaces</a></li>
+	                                                                                                            <li><a href="/category/gaming/">Gaming &amp; Social</a></li>
+	                                                                                                            <li><a href="/category/fintech/">Fintech</a></li>
+	                                                                                                            <li><a href="/category/enterprise-b2b-saas/">Enterprise &amp; SaaS</a></li>
+	                                                                                                            <li><a href="/category/security-privacy/">Security &amp; Privacy</a></li>
+	                                                                                                            <li><a href="/category/blockchain-cryptocurrencies/">Cryptocurrencies &amp; Blockchains</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                                <div class="col">
+	                                                                                                        <a href="/content/" class="title">Type</a>
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/articles/">Articles</a></li>
+	                                                                                                            <li><a href="/videos/">Video</a></li>
+	                                                                                                            <li><a href="https://future.com/podcast-network/">Podcasts</a></li>
+	                                                                                                            <li><a href="https://info.a16z.com/newsletters.html">Newsletters</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                                            </li>
+                            	                        	                                                    <li class="">
+                                <a href="/about/">About</a>
+                                                            </li>
+                            	                        	                                                    <li class="">
+                                <a href="/about/jobs/">Jobs</a>
+                                                            </li>
+                                                                                        <li>
+                                    <a href="https://info.a16z.com/newsletters.html" target="" class="btn btn-orange">
+                                        Newsletters                                    </a>
+                                </li>
+                                                    </ul>
+                    </nav>
+                                        <div class="search style-1">
+                        <div class="search-opener-wrap">
+                            <a href="#" class="icon-search search-opener"></a>
+                        </div>
+                        <div class="search-box">
+                            <form role="search" method="get" action="/">
+                                <button for="search">
+                                    <span class="sr-only">search</span>
+                                </button>
+                                <input type="search" id="search" placeholder="Search" name="s" aria-label="search" autocomplete="false">
+                            </form>
+                            <a href="#" class="close search-opener"><span class="sr-only">Close</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+                <!-- Rebranded Header End -->
+
+		<div id="content" class="site-content sidebar--none">
+			<main id="primary" class="content-area site-content__primary" role="main">
+                                <div class="content-new">
+                    <div class="container">
+										
+<article id="post-310689">
+        <main id="main">
+        <div class="blog-section">
+            <header class="blog-header">
+                <h1>Web3 Security: Attack Types and Lessons Learned</h1>
+	            
+<div class="byline byline--entry-header">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+		
+			Riyaz Faizullabhoy and 	
+			<a href="https://a16z.com/author/matt-gleason/" target="" class="author">Matt Gleason</a>		</span>
+</div>
+            </header>
+            <div class="blog-content-area">
+                <aside class="blog-aside">
+                    <div class="blog-aside__inner">
+	                    
+<ul class="post-terms post-terms--single">
+		
+		<li>
+			<a rel="tag" href="https://a16z.com/category/blockchain-cryptocurrencies/">
+			crypto &amp; web3			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/category/security-privacy/">
+			security &amp; privacy			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/a16z-crypto/">
+			a16z crypto			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/blockchain/">
+			blockchain			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/cyberattacks/">
+			cyberattacks			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/hacked/">
+			hacked!			</a>
+		</li>
+	</ul>
+	                    <ul class="blog-social-networks">
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/" target="_blank" data-url="https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/">
+			Facebook
+		</a>
+	</li>
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&#038;url=https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/" target="_blank" data-url="https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/" data-title="Web3 Security: Attack Types and Lessons Learned">
+			LinkedIn
+		</a>
+	</li>
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-twitter" href="https://twitter.com/intent/tweet/?text=Web3%20Security:%20Attack%20Types%20and%20Lessons%20Learned&#038;url=https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/&#038;via=a16z"  data-url="https://a16z.com/2022/04/23/web3-security-crypto-hack-attack-lessons/" data-via="a16z" data-text="Web3 Security: Attack Types and Lessons Learned">
+			Twitter
+		</a>
+	</li>
+</ul>
+                                            </div>
+                </aside>
+                <div class="blog-content entry-content__primary">
+                    <div class="wp-content">
+	                    <p><span style="font-weight: 400;">A good deal of web3 security rests on</span><span style="font-weight: 400;"> blockchains&#8217; special ability </span><a style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;" href="https://a16z.com/2020/01/27/computers-that-make-commitments/" target="_blank" rel="noopener">to make commitments</a> and<span style="font-weight: 400;"> to be resilient to human intervention. </span><span style="font-weight: 400;">But the related feature of finality – where transactions are generally irreversible – makes these software-controlled networks a tempting target for attackers. Indeed, as blockchains – the distributed computer networks that are the foundation of </span><a style="font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen-Sans, Ubuntu, Cantarell, 'Helvetica Neue', sans-serif;" href="https://future.com/category/crypto-web3/" target="_blank" rel="noopener">web3</a><span style="font-weight: 400;"> – and their accompanying technologies and applications accrue value, they become increasingly coveted targets for attackers.</span></p>
+<p><span style="font-weight: 400;">Despite web3’s differences from earlier iterations of the internet, we’ve observed commonalities with previous software </span><a href="https://a16z.com/category/security-privacy/" target="_blank" rel="noopener"><span style="font-weight: 400;">security trends</span></a><span style="font-weight: 400;">. In many cases, the biggest problems remain the same as ever. By studying these areas, defenders – whether builders, security teams, or everyday crypto users – can better guard themselves, their projects, and their wallets against would-be thieves. </span><span style="font-weight: 400;">Below we present some common themes and projections based on our experience.</span></p>
+<ul>
+<li style="font-weight: 400;"><b>Following the money</b>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Attackers generally aim to maximize return on investment. They can expend more time and effort attacking protocols with more “total value locked,” or TVL, because the potential rewards are greater.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">The most well-resourced hacker groups target high value systems more often. Novel exploits, the most valuable kind, are more frequently aimed at these prized targets too.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Low cost attacks – like phishing – will never go away, and we expect them to become more common for the foreseeable future.</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;"><b>Patching the holes</b>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">As developers learn from tried-and-true attacks, they may improve the state of web3 software to the point where it becomes “secure by default.” Often, this involves tightening up application programming interfaces, or </span><a href="https://a16z.com/tag/the-api-economy/" target="_blank" rel="noopener"><span style="font-weight: 400;">APIs</span></a>,<span style="font-weight: 400;"> to make it harder for people to mistakenly introduce vulnerabilities.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">While security is always a work in progress – and to be sure, nothing is ever hack-proof – defenders and developers can raise the cost of attacks by eliminating much of the low hanging fruit for attackers.</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">As security practices improve and tooling matures, the success of the following attacks may drop substantially: governance attacks, price oracle manipulation, and re-entrancy bugs. (More on these below.)</span></li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Platforms that are not able to ensure “perfect” security will have to use exploit mitigation efforts to lower the possibility of losses. This may deter attackers by reducing the “benefit,” or upside, part of their cost-benefit analysis.</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;"><b>Categorizing attacks</b>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Attacks on different systems can be classified based on their shared characteristics. Defining traits include how sophisticated an attack is to pull off, to what extent the attacks can be automated, and what prevention measures can be put in place to defend against them.</span></li>
+</ul>
+</li>
+</ul>
+<p><span style="font-weight: 400;">Below is a non-exhaustive list of attack types we’ve seen in the largest hacks over the past year. We’ve also included our observations on today’s threat landscape and where we expect web3 security to go in the future.</span></p>
+<h2><span style="font-weight: 400;">APT operations: the top predators</span></h2>
+<p><a href="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?ssl=1"><img decoding="async" class="aligncenter size-full wp-image-310700" src="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?resize=1541%2C540&#038;ssl=1" alt="" width="1541" height="540" srcset="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?w=1541&amp;ssl=1 1541w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?resize=300%2C105&amp;ssl=1 300w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?resize=1024%2C359&amp;ssl=1 1024w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?resize=768%2C269&amp;ssl=1 768w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?resize=1536%2C538&amp;ssl=1 1536w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?resize=125%2C44&amp;ssl=1 125w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?resize=590%2C207&amp;ssl=1 590w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/APT-Operations-copy.png?resize=1120%2C392&amp;ssl=1 1120w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1" /></a></p>
+<p><span style="font-weight: 400;">Expert adversaries, often called Advanced Persistent Threats (APTs), are the boogeymen of security. Their motivations and capabilities vary widely, but they tend to be well-heeled and, as the moniker suggests, persistent; unfortunately, it’s likely they will always be around. Different APTs run many different types of operations, but these threat actors tend to be the likeliest to attack the network layer of companies directly to accomplish their goals. </span></p>
+<p><span style="font-weight: 400;">We know some advanced groups are actively targeting web3 projects, and we suspect there are others who have yet to be identified. The people behind the most concerning APTs tend to live in places without extradition treaties with the U.S. and EU, making it harder for them to be prosecuted for their activities. One of the most well-known APTs is Lazarus, a North Korean group which the </span><a href="https://www.fbi.gov/news/press-releases/press-releases/fbi-statement-on-attribution-of-malicious-cyber-activity-posed-by-the-democratic-peoples-republic-of-korea" target="_blank" rel="noopener"><span style="font-weight: 400;">FBI recently attributed</span></a><span style="font-weight: 400;"> as having conducted the largest crypto hack to date.</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Examples:</span>
+<ul>
+<li style="font-weight: 400;"><a href="https://roninblockchain.substack.com/p/community-alert-ronin-validators?s=r" target="_blank" rel="noopener"><span style="font-weight: 400;">Ronin</span></a><span style="font-weight: 400;"> validator hack</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Profile</span>
+<ul>
+<li style="font-weight: 400;"><b>Who</b><span style="font-weight: 400;">: Nation states, well-funded criminal organizations, and other advanced organized groups. Examples include Ronin hackers (Lazarus, widely linked to North Korea). </span></li>
+<li style="font-weight: 400;"><b>Sophistication</b><span style="font-weight: 400;">: High (only available to highly resourced groups, usually in countries that won’t prosecute).</span></li>
+<li style="font-weight: 400;"><b>Automatability</b><span style="font-weight: 400;">: Low (still mostly manual efforts with some custom tooling)</span></li>
+<li style="font-weight: 400;"><b>Expectations for the future</b><span style="font-weight: 400;">: APTs will remain active as long as they can monetize their activities or achieve various political ends.</span></li>
+</ul>
+</li>
+</ul>
+<h2><span style="font-weight: 400;">User-targeted phishing: the social engineers</span></h2>
+<p><a href="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?ssl=1"><img decoding="async" loading="lazy" class="aligncenter size-full wp-image-310694" src="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?resize=1541%2C540&#038;ssl=1" alt="" width="1541" height="540" srcset="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?w=1541&amp;ssl=1 1541w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?resize=300%2C105&amp;ssl=1 300w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?resize=1024%2C359&amp;ssl=1 1024w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?resize=768%2C269&amp;ssl=1 768w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?resize=1536%2C538&amp;ssl=1 1536w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?resize=125%2C44&amp;ssl=1 125w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?resize=590%2C207&amp;ssl=1 590w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Phishing.png?resize=1120%2C392&amp;ssl=1 1120w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1" /></a></p>
+<p><span style="font-weight: 400;">Phishing is a well-known, ubiquitous issue. Phishers try to ensnare their prey by sending baited messages through a variety of channels, including instant messenger, email, Twitter, Telegram, Discord, and hacked websites. If you browse your spam mailbox you’ll probably see hundreds of attempts to trick you into divulging information, like passwords, or to steal your money. </span></p>
+<p><span style="font-weight: 400;">Now that web3 lets people directly trade assets, such as tokens or <a href="https://a16z.com/tag/nfts/">NFTs</a>, with almost instant finality, phishing campaigns are targeting its users. These attacks are the easiest way for people with little knowledge or technical expertise to make money stealing crypto. Even so, they remain a valuable method for organized groups to go after high-value targets, or for advanced groups to wage broad-based, wallet-draining attacks through, for example, website takeovers. </span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Examples</span>
+<ul>
+<li style="font-weight: 400;"><a href="https://twitter.com/opensea/status/1495625768713469954" target="_blank" rel="noopener"><span style="font-weight: 400;">OpenSea</span></a><span style="font-weight: 400;"> phishing campaign that targeted users directly</span></li>
+<li style="font-weight: 400;"><a href="https://badger.com/technical-post-mortem" target="_blank" rel="noopener"><span style="font-weight: 400;">BadgerDAO</span></a><span style="font-weight: 400;"> phishing attack that ultimately comprised an application</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Profile</span>
+<ul>
+<li style="font-weight: 400;"><b>Who</b><span style="font-weight: 400;">: Anyone ranging from script kiddies to organized groups.</span></li>
+<li style="font-weight: 400;"><b>Sophistication</b><span style="font-weight: 400;">: Low-Moderate (attacks can be low quality “spray-and-pray” or </span><a href="https://www.virusbulletin.com/conference/vb2019/abstracts/discretion-apt-recent-apt-attack-crypto-exchange-employees/" target="_blank" rel="noopener"><span style="font-weight: 400;">hyper-targeted</span></a><span style="font-weight: 400;"> depending on the effort put in by attackers).</span></li>
+<li style="font-weight: 400;"><b>Automatability</b><span style="font-weight: 400;">: Moderate-High (most of the work can be automated).</span></li>
+<li style="font-weight: 400;"><b>Expectations for the future</b><span style="font-weight: 400;">: Phishing is cheap and phishers tend to adapt to – and route around – the latest defenses, so we expect incidences of these attacks to rise. User defenses can be improved through increased education and awareness, better filtering, improved warning banners, and stronger wallet controls.</span></li>
+</ul>
+</li>
+</ul>
+<h2><span style="font-weight: 400;">Supply chain vulnerabilities: the weakest links</span></h2>
+<p><a href="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?ssl=1"><img decoding="async" loading="lazy" class="aligncenter size-full wp-image-310695" src="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?resize=1541%2C540&#038;ssl=1" alt="" width="1541" height="540" srcset="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?w=1541&amp;ssl=1 1541w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?resize=300%2C105&amp;ssl=1 300w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?resize=1024%2C359&amp;ssl=1 1024w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?resize=768%2C269&amp;ssl=1 768w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?resize=1536%2C538&amp;ssl=1 1536w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?resize=125%2C44&amp;ssl=1 125w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?resize=590%2C207&amp;ssl=1 590w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Supply-Chain.png?resize=1120%2C392&amp;ssl=1 1120w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1" /></a></p>
+<p><span style="font-weight: 400;">When car manufacturers discover defective parts in vehicles, they issue safety recalls; it’s no different in the software supply chain.</span></p>
+<p><span style="font-weight: 400;">Third-party software libraries introduce a large attack surface. This has long been a security challenge across systems before web3, for example with the </span><a href="https://www.pcmag.com/how-to/what-is-the-log4j-exploit-and-what-can-you-do-to-stay-safe" target="_blank" rel="noopener"><span style="font-weight: 400;">log4j exploit</span></a><span style="font-weight: 400;">, which affected widespread web server software, last December. Attackers will scan the internet for known vulnerabilities to find unpatched issues they can exploit.</span></p>
+<p><span style="font-weight: 400;">Imported code may not be written by your own engineering team, but its upkeep is critical.  Teams must monitor their software’s component parts for vulnerabilities, ensure updates are deployed, and keep up to date on the momentum and health of the projects on which they depend. The real and instant cost of exploits for web3 software vulnerabilities makes it challenging to responsibly communicate these issues to library users. The verdict is still out as to how or where teams communicate these to one another in a manner that doesn’t accidentally put user funds at risk. </span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Examples</span>
+<ul>
+<li style="font-weight: 400;"><a href="https://twitter.com/wormholecrypto/status/1489001949881978883" target="_blank" rel="noopener"><span style="font-weight: 400;">Wormhole</span></a><span style="font-weight: 400;"> bridge hack</span></li>
+<li style="font-weight: 400;"><a href="https://medium.com/multichainorg/multichain-contract-vulnerability-post-mortem-d37bfab237c8" target="_blank" rel="noopener"><span style="font-weight: 400;">Multichain</span></a><span style="font-weight: 400;"> vulnerability disclosure hack</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Profile</span>
+<ul>
+<li style="font-weight: 400;"><b>Who</b><span style="font-weight: 400;">: Organized groups such as APTs, solo actors, and insiders.</span></li>
+<li style="font-weight: 400;"><b>Sophistication</b><span style="font-weight: 400;">: Moderate (need technical know-how and some time).</span></li>
+<li style="font-weight: 400;"><b>Automatability</b><span style="font-weight: 400;">: Moderate (scanning to find faulty software components can be automated; but when new vulnerabilities are discovered, exploits need to be constructed manually).</span></li>
+<li style="font-weight: 400;"><b>Expectations for the future</b><span style="font-weight: 400;">: Supply chain vulnerabilities are likely to increase as the interdependence and complexity of software systems rises. Opportunistic hacking will likely also increase until good, standardized methods of vulnerability disclosure are developed for web3 security.</span></li>
+</ul>
+</li>
+</ul>
+<h2><span style="font-weight: 400;">Governance attacks: the election stealers</span></h2>
+<p><a href="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?ssl=1"><img decoding="async" loading="lazy" class="aligncenter size-full wp-image-310696" src="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?resize=1541%2C540&#038;ssl=1" alt="" width="1541" height="540" srcset="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?w=1541&amp;ssl=1 1541w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?resize=300%2C105&amp;ssl=1 300w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?resize=1024%2C359&amp;ssl=1 1024w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?resize=768%2C269&amp;ssl=1 768w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?resize=1536%2C538&amp;ssl=1 1536w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?resize=125%2C44&amp;ssl=1 125w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?resize=590%2C207&amp;ssl=1 590w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Governance.png?resize=1120%2C392&amp;ssl=1 1120w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1" /></a></p>
+<p><span style="font-weight: 400;">This is the first crypto-specific issue to make the list. Many projects in web3 include a governance aspect, in which token-holders can put forward and vote on proposals to alter the network. While this presents an opportunity for continual evolution and improvement, it also opens a backdoor to introduce malicious proposals that may damage the network if enacted.</span></p>
+<p><span style="font-weight: 400;">Attackers have devised new methods to circumvent controls, commandeer leadership, and loot treasuries. Once a </span><a href="https://www.coindesk.com/tech/2022/02/04/trons-justin-sun-accused-of-governance-attack-on-defi-lender-compound/" target="_blank" rel="noopener"><span style="font-weight: 400;">theoretical concern</span></a><span style="font-weight: 400;">, governance attacks have now been demonstrated in the wild. Attackers can take out massive “flash loans” to swing votes, as recently happened to the </span><a href="https://future.com/what-is-decentralized-finance/" target="_blank" rel="noopener"><span style="font-weight: 400;">decentralized finance</span></a><span style="font-weight: 400;">, or </span><a href="https://a16z.com/tag/defi/" target="_blank" rel="noopener"><span style="font-weight: 400;">DeFi</span></a><span style="font-weight: 400;">, project Beanstalk. Governance votes that result in automatic execution of proposals are easier for attackers to exploit; whereas, if proposal enactment is subject to a time delay or requires manual sign-off from multiple parties (through a multisig wallet, for example), it can be harder to pull off.</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Examples</span>
+<ul>
+<li style="font-weight: 400;"><a href="https://twitter.com/BeanstalkFarms/status/1516255511565398016?s=20&amp;t=ibkWf6Q7K7KSIqCp9238yQ" target="_blank" rel="noopener"><span style="font-weight: 400;">Beanstalk</span></a><span style="font-weight: 400;"> fund-siphoning </span></li>
+</ul>
+</li>
+</ul>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Profile</span>
+<ul>
+<li style="font-weight: 400;"><b>Who</b><span style="font-weight: 400;">: Anyone from organized groups (APTs) to solo actors.</span></li>
+<li style="font-weight: 400;"><b>Sophistication</b><span style="font-weight: 400;">: Low-to-High, depending on the protocol. (Many projects have active forums, communities on Twitter and Discord, and delegation dashboards that can easily expose more amateur attempts.)</span></li>
+<li style="font-weight: 400;"><b>Automatability</b><span style="font-weight: 400;">: Low-to-High, depending on the protocol. </span></li>
+<li style="font-weight: 400;"><b>Expectations for the future</b><span style="font-weight: 400;">: These attacks are highly dependent on governance tooling and standards, especially as they relate to monitoring and the process of proposal enactment.</span></li>
+</ul>
+</li>
+</ul>
+<h2><span style="font-weight: 400;">Pricing oracle attacks: market manipulators</span></h2>
+<p><a href="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?ssl=1"><img decoding="async" loading="lazy" class="aligncenter size-full wp-image-310697" src="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?resize=1541%2C540&#038;ssl=1" alt="" width="1541" height="540" srcset="https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?w=1541&amp;ssl=1 1541w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?resize=300%2C105&amp;ssl=1 300w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?resize=1024%2C359&amp;ssl=1 1024w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?resize=768%2C269&amp;ssl=1 768w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?resize=1536%2C538&amp;ssl=1 1536w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?resize=125%2C44&amp;ssl=1 125w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?resize=590%2C207&amp;ssl=1 590w, https://i2.wp.com/a16z.com/wp-content/uploads/2022/04/Oracles.png?resize=1120%2C392&amp;ssl=1 1120w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1" /></a></p>
+<p><span style="font-weight: 400;">Accurately pricing assets is hard. In the traditional trading arena, artificially inflating or deflating the price of an asset through market manipulation is illegal and you can be fined and/or arrested for it. In DeFi, which gives random people the ability to “flash trade” hundreds of millions or billions of dollars, causing sudden price fluctuations, the problem is pronounced.</span></p>
+<p><span style="font-weight: 400;">Many web3 projects rely on “</span><a href="https://ethereum.org/en/developers/docs/oracles/" target="_blank" rel="noopener"><span style="font-weight: 400;">oracles</span></a><span style="font-weight: 400;">” – systems that provide real-time data and are a source for information that cannot otherwise be found on-chain. Oracles are often used to determine exchange pricing between two assets, for instance. But attackers have found ways to fool these sources of supposed truth.</span></p>
+<p><span style="font-weight: 400;">As the standardization of oracles progresses, there will be safer bridges between the off-chain and on-chain worlds available, and we can expect markets to become more resilient to manipulation attempts. With any luck, this class of attacks may, one day, disappear almost entirely.</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Examples</span>
+<ul>
+<li style="font-weight: 400;"><a href="https://twitter.com/CreamdotFinance/status/1453455806075006976" target="_blank" rel="noopener"><span style="font-weight: 400;">Cream</span></a><span style="font-weight: 400;"> market manipulation</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Profile</span>
+<ul>
+<li style="font-weight: 400;"><b>Who</b><span style="font-weight: 400;">: Organized groups (APTs), solo actors, and insiders.</span></li>
+<li style="font-weight: 400;"><b>Sophistication</b><span style="font-weight: 400;">: Moderate (technical knowledge required).</span></li>
+<li style="font-weight: 400;"><b>Automatability</b><span style="font-weight: 400;">: High (most attacks likely involve automation detecting an exploitable issue).</span></li>
+<li style="font-weight: 400;"><b>Expectations for the future</b><span style="font-weight: 400;">: Likely to decrease as methods for accurate pricing become more standard.</span></li>
+</ul>
+</li>
+</ul>
+<h2><span style="font-weight: 400;">Novel vulnerabilities: unknown unknowns</span></h2>
+<p><a href="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?ssl=1"><img decoding="async" loading="lazy" class="aligncenter size-full wp-image-310698" src="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?resize=1541%2C540&#038;ssl=1" alt="" width="1541" height="540" srcset="https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?w=1541&amp;ssl=1 1541w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?resize=300%2C105&amp;ssl=1 300w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?resize=1024%2C359&amp;ssl=1 1024w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?resize=768%2C269&amp;ssl=1 768w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?resize=1536%2C538&amp;ssl=1 1536w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?resize=125%2C44&amp;ssl=1 125w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?resize=590%2C207&amp;ssl=1 590w, https://i0.wp.com/a16z.com/wp-content/uploads/2022/04/Zero-days.png?resize=1120%2C392&amp;ssl=1 1120w" sizes="(max-width: 1000px) 100vw, 1000px" data-recalc-dims="1" /></a></p>
+<p><span style="font-weight: 400;">“Zero-day” exploits –  so named because they have been publicly known for zero days at the time of their appearance – are a hot button issue in the field of information security, and it is no different in web3 security. Because they arrive out of the blue, they are the hardest attacks to defend against.</span></p>
+<p><span style="font-weight: 400;">If anything, web3 has made it easier to monetize these expensive, labor-intensive attacks since it can be difficult for people to claw back crypto funds once they’re stolen. Attackers can spend lots of time poring over the code running on-chain applications to find one bug that will justify all their effort. Meanwhile, some once-novel vulnerabilities continue to plague unsuspecting projects; the re-entrancy bug that </span><a href="https://medium.com/@MyPaoG/explaining-the-dao-exploit-for-beginners-in-solidity-80ee84f0d470" target="_blank" rel="noopener"><span style="font-weight: 400;">famously felled TheDAO</span></a><span style="font-weight: 400;">, an early Ethereum venture, </span><a href="https://www.coindesk.com/tech/2022/04/01/ola-finance-says-attackers-stole-47m-in-re-entrancy-exploit/" target="_blank" rel="noopener"><span style="font-weight: 400;">continues to resurface elsewhere today</span></a><span style="font-weight: 400;">.</span></p>
+<p><span style="font-weight: 400;">It’s unclear how quickly or easily the industry will be able to adapt to triage these types of vulnerabilities, but continued investment in security defenses such as auditing, monitoring, and tooling will increase the cost for attackers seeking to exploit them.</span></p>
+<ul>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Examples</span>
+<ul>
+<li style="font-weight: 400;"><a href="https://medium.com/poly-network/the-root-cause-of-poly-network-being-hacked-e30cf27468f0" target="_blank" rel="noopener"><span style="font-weight: 400;">Poly</span></a><span style="font-weight: 400;">’s cross-chain transactions vulnerability</span></li>
+<li style="font-weight: 400;"><a href="https://twitter.com/QubitFin/status/1486870238591594497" target="_blank" rel="noopener"><span style="font-weight: 400;">Qubit</span></a><span style="font-weight: 400;">’s unlimited minting bug</span></li>
+</ul>
+</li>
+<li style="font-weight: 400;"><span style="font-weight: 400;">Profile</span>
+<ul>
+<li style="font-weight: 400;"><b>Who</b><span style="font-weight: 400;">: Organized groups (APTs), solo actors (less likely), and insiders.</span></li>
+<li style="font-weight: 400;"><b>Sophistication</b><span style="font-weight: 400;">: Moderate-High (technical knowledge is required, but not all the vulnerabilities are too complex for people to understand).</span></li>
+<li style="font-weight: 400;"><b>Automatability</b><span style="font-weight: 400;">: Low (finding novel vulnerabilities takes time and effort and is not likely to be automated; once found, scanning for similar issues across other systems is easier).</span></li>
+<li style="font-weight: 400;"><b>Expectations for the future</b><span style="font-weight: 400;">: More attention attracts more whitehats and makes the “barrier to entry” higher for discovering novel vulnerabilities. Meanwhile, as web3 adoption grows, so does the motive for blackhats to find new exploits. This is likely to remain a game of cat-and-mouse as it has in many other areas of security.</span></li>
+</ul>
+</li>
+</ul>
+                    </div>
+	                                    <div class="entry-content__post-date">
+                        April 23, 2022                    </div>
+	                                </div>
+                <aside class="blog-aside-right">
+                    <div class="blog-aside-right__inner">
+                                            </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+</article>
+
+<section class="bio-lp-newsletter" data-component="subscribeSection" style="background: #F2F2F2 ">
+    <div class="bio-lp-newsletter__container">
+        <div class="bio-lp-newsletter__form">
+            <div class="form-wrap" id="vlp-signup-form-01">
+				                    <h2 class="bio-lp-newsletter__title">
+						Our crypto newsletter is coming soon                    </h2>
+								                    <p class="bio-lp-newsletter__text">
+						Sign up to be the first to get it.                    </p>
+				                <form class="input-addon"
+                      data-formID="1601"
+                      data-formInstance="subscribe-footer"
+                      target="_blank"
+                      id="mktoForm-1601"
+                      data-thankyou-message="#vlp-signup-ty-01"
+                      data-thankyou-container="#vlp-signup-form-01"
+                ></form>
+            </div>
+            <div id="vlp-signup-ty-01" class="bio-lp-newsletter__thanks-msg thanks-msg" style="display: none;">
+                <div class="title-wrap">
+                    <h2>Thanks for signing up.</h2>
+                </div>
+                <p>Check your inbox for a welcome note.</p>
+            </div>
+        </div>
+    </div>
+</section>
+                                    </div>
+                </div>
+			    			</main>
+
+			
+		</div><!-- #content -->
+
+		
+        <footer id="footer" class="footer-new">
+                        <div class="footer-above">
+                <div class="container">
+                    <div class="footer-l">
+                        <span class="copyright">
+                            Software is eating the world                        </span>
+                    </div>
+                </div>
+            </div>
+                        <div class="container">
+                <div class="footer-l">
+                    <span class="copyright">
+                        &copy; 2023 Andreessen Horowitz                    </span>
+                                            <div class="footer-above--mobile">
+                            <div class="container">
+                                <div class="footer-l">
+                        <span class="copyright">
+                            Software is eating the world                        </span>
+                                </div>
+                            </div>
+                        </div>
+                                        <ul class="social-networks site-footer__social-media-menu">
+	                    <div class="menu-social-media-container"><ul id="social-media-menu" class="menu"><li id="menu-item-208636" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-208636"><a href="https://twitter.com/a16z">Twitter</a></li>
+<li id="menu-item-208637" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-208637"><a href="https://a16z.simplecast.com">Simplecast</a></li>
+</ul></div>                    </ul>
+                </div>
+                <nav class="footer-nav">
+	                <div class="menu-footer-2017-container"><ul id="utilities-menu" class="menu"><li id="menu-item-13150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13150"><a href="https://a16z.com/about/contact/">Contact</a></li>
+<li id="menu-item-208638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-208638"><a href="https://a16z.com/about/jobs/">Jobs</a></li>
+<li id="menu-item-296893" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296893"><a href="https://a16z.com/briefings/">Briefings</a></li>
+<li id="menu-item-13267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13267"><a href="https://a16z.com/tos-privacy/">Terms of Use &amp; Privacy</a></li>
+<li id="menu-item-284008" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-284008"><a href="https://a16z.com/disclosures/">Disclosures</a></li>
+<li id="menu-item-95459" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95459"><a href="https://a16z.com/conduct/">Conduct</a></li>
+<li id="menu-item-300281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300281"><a href="https://a16z.com/values/">Who We Are</a></li>
+</ul></div>                </nav>
+            </div>
+        </footer>
+
+		
+			</div><!-- #page -->
+
+		<script type="text/javascript">
+						var _sf_async_config={};
+			_sf_async_config.uid = 66597;
+			_sf_async_config.domain = "a16z.com";
+			_sf_async_config.useCanonical = true;
+				(function(){
+			        function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+					document.body.appendChild(e);
+				  }
+				  var oldonload = window.onload;
+				  window.onload = (typeof window.onload != 'function') ?
+					 loadChartbeat : function() { try { oldonload(); } catch (e) { loadChartbeat(); throw e} loadChartbeat(); };
+				})();
+		</script>
+
+
+<!-- START Parse.ly Include: Standard -->
+
+<div id="parsely-root" style="display: none">
+	<div id="parsely-cfg" data-parsely-site="a16z.com"></div>
+</div>
+<script data-cfasync="false">
+	(function (s, p, d) {
+		var h = d.location.protocol, i = p + "-" + s,
+			e = d.getElementById(i), r = d.getElementById(p + "-root"),
+			u = h === "https:" ? "d1z2jf7jlzjs58.cloudfront.net"
+				: "static." + p + ".com";
+		if (e) return;
+		e = d.createElement(s);
+		e.id = i;
+		e.async = true;
+		e.setAttribute('data-cfasync', 'false');
+		e.src = h + "//" + u + "/p.js";
+		r.appendChild(e);
+	})("script", "parsely", document);
+</script>
+
+<!-- END Parse.ly Include: Standard -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHMSDPX" height="0" width="0" style="display:none"></iframe></noscript><script type='text/javascript' src='https://c0.wp.com/p/jetpack/8.6/_inc/build/photon/photon.min.js' id='jetpack-photon-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/build/js/global.1f0df408088a112ee859.bundle.min.js?ver=1.03' id='a16z-global-js-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/build/js/single.970a4bf0454145343412.bundle.min.js?ver=1.03' id='a16z-single-js-js'></script>
+<script type='text/javascript' src='//maps.googleapis.com/maps/api/js?ver=3.0.0' id='google-maps-api-js'></script>
+<script type='text/javascript' src='//munchkin.marketo.net/munchkin.js?ver=610' id='marketo-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/build/js/marketoForms.aad818a15710e122e1a6.bundle.min.js?ver=1.01' id='marketo-forms-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/digitalpi-utm.js?ver=1.0' id='digitalpi-utm-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/grayscale.js?ver=1.0' id='grayscale-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/custom-scroll.min.js?ver=1.0' id='custom-scroll-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/bg-video.js?ver=1.0' id='bg-video-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/mobile-hover.js?ver=1.0' id='mobile-hover-js'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202306.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.6',blog:'147973073',post:'310689',tz:'-8',srv:'a16z.com'} ]);
+	_stq.push([ 'clickTrackerInit', '147973073', '310689' ]);
+</script>
+
+</body>
+</html>

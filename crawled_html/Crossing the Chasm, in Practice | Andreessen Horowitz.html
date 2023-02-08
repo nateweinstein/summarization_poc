@@ -1,0 +1,556 @@
+<!DOCTYPE html>
+<html lang="en-US">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
+<meta name="google-site-verification" content="P0GXb2pbBqt8KUgYlOlJ1WQIEIKCcv82t4HIeTqinPk" />
+<link rel="stylesheet" href="https://use.typekit.net/kie2zie.css">
+<link rel="profile" href="http://gmpg.org/xfn/11">
+<link rel="pingback" href="https://a16z.com/xmlrpc.php">
+<meta name='robots' content='index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1' />
+
+	<!-- This site is optimized with the Yoast SEO plugin v19.11 - https://yoast.com/wordpress/plugins/seo/ -->
+	<title>&#039;Crossing the Chasm&#039;, in Practice | Andreessen Horowitz</title>
+	<link rel="canonical" href="https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/" />
+	<meta property="og:locale" content="en_US" />
+	<meta property="og:type" content="article" />
+	<meta property="og:title" content="&#039;Crossing the Chasm&#039;, in Practice | Andreessen Horowitz" />
+	<meta property="og:description" content="The topic of pre-chasm startups is one I’ve long been obsessed with, as a former entrepreneur who (along with many colleagues!) founded a company around a pre-chasm technology (software-defined networking), and was involved from academic paper to product line. &hellip;" />
+	<meta property="og:url" content="https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/" />
+	<meta property="og:site_name" content="Andreessen Horowitz" />
+	<meta property="article:published_time" content="2019-01-08T14:30:46+00:00" />
+	<meta property="article:modified_time" content="2022-06-02T21:16:39+00:00" />
+	<meta name="author" content="Martin Casado" />
+	<meta name="twitter:card" content="summary_large_image" />
+	<meta name="twitter:label1" content="Written by" />
+	<meta name="twitter:data1" content="Martin Casado" />
+	<meta name="twitter:label2" content="Est. reading time" />
+	<meta name="twitter:data2" content="9 minutes" />
+	<script type="application/ld+json" class="yoast-schema-graph">{"@context":"https://schema.org","@graph":[{"@type":"WebPage","@id":"https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/","url":"https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/","name":"'Crossing the Chasm', in Practice | Andreessen Horowitz","isPartOf":{"@id":"https://a16z.com/#website"},"datePublished":"2019-01-08T14:30:46+00:00","dateModified":"2022-06-02T21:16:39+00:00","author":{"@id":"https://a16z.com/#/schema/person/87878308c1f14b7e531faf33b1c665fe"},"breadcrumb":{"@id":"https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/#breadcrumb"},"inLanguage":"en-US","potentialAction":[{"@type":"ReadAction","target":["https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/"]}]},{"@type":"BreadcrumbList","@id":"https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/#breadcrumb","itemListElement":[{"@type":"ListItem","position":1,"name":"Home","item":"https://a16z.com/"},{"@type":"ListItem","position":2,"name":"&#8216;Crossing the Chasm&#8217;, in Practice"}]},{"@type":"WebSite","@id":"https://a16z.com/#website","url":"https://a16z.com/","name":"Andreessen Horowitz","description":"Software Is Eating the World","potentialAction":[{"@type":"SearchAction","target":{"@type":"EntryPoint","urlTemplate":"https://a16z.com/?s={search_term_string}"},"query-input":"required name=search_term_string"}],"inLanguage":"en-US"},{"@type":"Person","@id":"https://a16z.com/#/schema/person/87878308c1f14b7e531faf33b1c665fe","name":"Sonal Chokshi","image":{"@type":"ImageObject","inLanguage":"en-US","@id":"https://a16z.com/#/schema/person/image/57c20b2c01a3e7e5cdf2430687c0a82a","url":"https://secure.gravatar.com/avatar/0a6cea5804bdc50314d9adf7c8a2ad0e?s=96&d=identicon&r=g","contentUrl":"https://secure.gravatar.com/avatar/0a6cea5804bdc50314d9adf7c8a2ad0e?s=96&d=identicon&r=g","caption":"Sonal Chokshi"},"url":"https://a16z.com/author/sonala16z/"}]}</script>
+	<!-- / Yoast SEO plugin. -->
+
+
+<link rel='dns-prefetch' href='//secure.gravatar.com' />
+<link rel='dns-prefetch' href='//cdn.optimizely.com' />
+<link rel='dns-prefetch' href='//maps.googleapis.com' />
+<link rel='dns-prefetch' href='//munchkin.marketo.net' />
+<link rel='dns-prefetch' href='//info.a16z.com' />
+<script type="text/javascript">
+window._wpemojiSettings = {"baseUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/72x72\/","ext":".png","svgUrl":"https:\/\/s.w.org\/images\/core\/emoji\/14.0.0\/svg\/","svgExt":".svg","source":{"concatemoji":"https:\/\/a16z.com\/wp-includes\/js\/wp-emoji-release.min.js?ver=6.1.1"}};
+/*! This file is auto-generated */
+!function(e,a,t){var n,r,o,i=a.createElement("canvas"),p=i.getContext&&i.getContext("2d");function s(e,t){var a=String.fromCharCode,e=(p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,e),0,0),i.toDataURL());return p.clearRect(0,0,i.width,i.height),p.fillText(a.apply(this,t),0,0),e===i.toDataURL()}function c(e){var t=a.createElement("script");t.src=e,t.defer=t.type="text/javascript",a.getElementsByTagName("head")[0].appendChild(t)}for(o=Array("flag","emoji"),t.supports={everything:!0,everythingExceptFlag:!0},r=0;r<o.length;r++)t.supports[o[r]]=function(e){if(p&&p.fillText)switch(p.textBaseline="top",p.font="600 32px Arial",e){case"flag":return s([127987,65039,8205,9895,65039],[127987,65039,8203,9895,65039])?!1:!s([55356,56826,55356,56819],[55356,56826,8203,55356,56819])&&!s([55356,57332,56128,56423,56128,56418,56128,56421,56128,56430,56128,56423,56128,56447],[55356,57332,8203,56128,56423,8203,56128,56418,8203,56128,56421,8203,56128,56430,8203,56128,56423,8203,56128,56447]);case"emoji":return!s([129777,127995,8205,129778,127999],[129777,127995,8203,129778,127999])}return!1}(o[r]),t.supports.everything=t.supports.everything&&t.supports[o[r]],"flag"!==o[r]&&(t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&t.supports[o[r]]);t.supports.everythingExceptFlag=t.supports.everythingExceptFlag&&!t.supports.flag,t.DOMReady=!1,t.readyCallback=function(){t.DOMReady=!0},t.supports.everything||(n=function(){t.readyCallback()},a.addEventListener?(a.addEventListener("DOMContentLoaded",n,!1),e.addEventListener("load",n,!1)):(e.attachEvent("onload",n),a.attachEvent("onreadystatechange",function(){"complete"===a.readyState&&t.readyCallback()})),(e=t.source||{}).concatemoji?c(e.concatemoji):e.wpemoji&&e.twemoji&&(c(e.twemoji),c(e.wpemoji)))}(window,document,window._wpemojiSettings);
+</script>
+<style type="text/css">
+img.wp-smiley,
+img.emoji {
+	display: inline !important;
+	border: none !important;
+	box-shadow: none !important;
+	height: 1em !important;
+	width: 1em !important;
+	margin: 0 0.07em !important;
+	vertical-align: -0.1em !important;
+	background: none !important;
+	padding: 0 !important;
+}
+</style>
+	<link rel='stylesheet' id='wp-block-library-css' href='https://c0.wp.com/c/6.1.1/wp-includes/css/dist/block-library/style.min.css' type='text/css' media='all' />
+<style id='wp-block-library-inline-css' type='text/css'>
+.has-text-align-justify{text-align:justify;}
+</style>
+<link rel='stylesheet' id='classic-theme-styles-css' href='https://c0.wp.com/c/6.1.1/wp-includes/css/classic-themes.min.css' type='text/css' media='all' />
+<style id='global-styles-inline-css' type='text/css'>
+body{--wp--preset--color--black: #000000;--wp--preset--color--cyan-bluish-gray: #abb8c3;--wp--preset--color--white: #ffffff;--wp--preset--color--pale-pink: #f78da7;--wp--preset--color--vivid-red: #cf2e2e;--wp--preset--color--luminous-vivid-orange: #ff6900;--wp--preset--color--luminous-vivid-amber: #fcb900;--wp--preset--color--light-green-cyan: #7bdcb5;--wp--preset--color--vivid-green-cyan: #00d084;--wp--preset--color--pale-cyan-blue: #8ed1fc;--wp--preset--color--vivid-cyan-blue: #0693e3;--wp--preset--color--vivid-purple: #9b51e0;--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple: linear-gradient(135deg,rgba(6,147,227,1) 0%,rgb(155,81,224) 100%);--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan: linear-gradient(135deg,rgb(122,220,180) 0%,rgb(0,208,130) 100%);--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange: linear-gradient(135deg,rgba(252,185,0,1) 0%,rgba(255,105,0,1) 100%);--wp--preset--gradient--luminous-vivid-orange-to-vivid-red: linear-gradient(135deg,rgba(255,105,0,1) 0%,rgb(207,46,46) 100%);--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray: linear-gradient(135deg,rgb(238,238,238) 0%,rgb(169,184,195) 100%);--wp--preset--gradient--cool-to-warm-spectrum: linear-gradient(135deg,rgb(74,234,220) 0%,rgb(151,120,209) 20%,rgb(207,42,186) 40%,rgb(238,44,130) 60%,rgb(251,105,98) 80%,rgb(254,248,76) 100%);--wp--preset--gradient--blush-light-purple: linear-gradient(135deg,rgb(255,206,236) 0%,rgb(152,150,240) 100%);--wp--preset--gradient--blush-bordeaux: linear-gradient(135deg,rgb(254,205,165) 0%,rgb(254,45,45) 50%,rgb(107,0,62) 100%);--wp--preset--gradient--luminous-dusk: linear-gradient(135deg,rgb(255,203,112) 0%,rgb(199,81,192) 50%,rgb(65,88,208) 100%);--wp--preset--gradient--pale-ocean: linear-gradient(135deg,rgb(255,245,203) 0%,rgb(182,227,212) 50%,rgb(51,167,181) 100%);--wp--preset--gradient--electric-grass: linear-gradient(135deg,rgb(202,248,128) 0%,rgb(113,206,126) 100%);--wp--preset--gradient--midnight: linear-gradient(135deg,rgb(2,3,129) 0%,rgb(40,116,252) 100%);--wp--preset--duotone--dark-grayscale: url('#wp-duotone-dark-grayscale');--wp--preset--duotone--grayscale: url('#wp-duotone-grayscale');--wp--preset--duotone--purple-yellow: url('#wp-duotone-purple-yellow');--wp--preset--duotone--blue-red: url('#wp-duotone-blue-red');--wp--preset--duotone--midnight: url('#wp-duotone-midnight');--wp--preset--duotone--magenta-yellow: url('#wp-duotone-magenta-yellow');--wp--preset--duotone--purple-green: url('#wp-duotone-purple-green');--wp--preset--duotone--blue-orange: url('#wp-duotone-blue-orange');--wp--preset--font-size--small: 13px;--wp--preset--font-size--medium: 20px;--wp--preset--font-size--large: 36px;--wp--preset--font-size--x-large: 42px;--wp--preset--spacing--20: 0.44rem;--wp--preset--spacing--30: 0.67rem;--wp--preset--spacing--40: 1rem;--wp--preset--spacing--50: 1.5rem;--wp--preset--spacing--60: 2.25rem;--wp--preset--spacing--70: 3.38rem;--wp--preset--spacing--80: 5.06rem;}:where(.is-layout-flex){gap: 0.5em;}body .is-layout-flow > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-flow > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-flow > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignleft{float: left;margin-inline-start: 0;margin-inline-end: 2em;}body .is-layout-constrained > .alignright{float: right;margin-inline-start: 2em;margin-inline-end: 0;}body .is-layout-constrained > .aligncenter{margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > :where(:not(.alignleft):not(.alignright):not(.alignfull)){max-width: var(--wp--style--global--content-size);margin-left: auto !important;margin-right: auto !important;}body .is-layout-constrained > .alignwide{max-width: var(--wp--style--global--wide-size);}body .is-layout-flex{display: flex;}body .is-layout-flex{flex-wrap: wrap;align-items: center;}body .is-layout-flex > *{margin: 0;}:where(.wp-block-columns.is-layout-flex){gap: 2em;}.has-black-color{color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-color{color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-color{color: var(--wp--preset--color--white) !important;}.has-pale-pink-color{color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-color{color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-color{color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-color{color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-color{color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-color{color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-color{color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-color{color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-color{color: var(--wp--preset--color--vivid-purple) !important;}.has-black-background-color{background-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-background-color{background-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-background-color{background-color: var(--wp--preset--color--white) !important;}.has-pale-pink-background-color{background-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-background-color{background-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-background-color{background-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-background-color{background-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-background-color{background-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-background-color{background-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-background-color{background-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-background-color{background-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-background-color{background-color: var(--wp--preset--color--vivid-purple) !important;}.has-black-border-color{border-color: var(--wp--preset--color--black) !important;}.has-cyan-bluish-gray-border-color{border-color: var(--wp--preset--color--cyan-bluish-gray) !important;}.has-white-border-color{border-color: var(--wp--preset--color--white) !important;}.has-pale-pink-border-color{border-color: var(--wp--preset--color--pale-pink) !important;}.has-vivid-red-border-color{border-color: var(--wp--preset--color--vivid-red) !important;}.has-luminous-vivid-orange-border-color{border-color: var(--wp--preset--color--luminous-vivid-orange) !important;}.has-luminous-vivid-amber-border-color{border-color: var(--wp--preset--color--luminous-vivid-amber) !important;}.has-light-green-cyan-border-color{border-color: var(--wp--preset--color--light-green-cyan) !important;}.has-vivid-green-cyan-border-color{border-color: var(--wp--preset--color--vivid-green-cyan) !important;}.has-pale-cyan-blue-border-color{border-color: var(--wp--preset--color--pale-cyan-blue) !important;}.has-vivid-cyan-blue-border-color{border-color: var(--wp--preset--color--vivid-cyan-blue) !important;}.has-vivid-purple-border-color{border-color: var(--wp--preset--color--vivid-purple) !important;}.has-vivid-cyan-blue-to-vivid-purple-gradient-background{background: var(--wp--preset--gradient--vivid-cyan-blue-to-vivid-purple) !important;}.has-light-green-cyan-to-vivid-green-cyan-gradient-background{background: var(--wp--preset--gradient--light-green-cyan-to-vivid-green-cyan) !important;}.has-luminous-vivid-amber-to-luminous-vivid-orange-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-amber-to-luminous-vivid-orange) !important;}.has-luminous-vivid-orange-to-vivid-red-gradient-background{background: var(--wp--preset--gradient--luminous-vivid-orange-to-vivid-red) !important;}.has-very-light-gray-to-cyan-bluish-gray-gradient-background{background: var(--wp--preset--gradient--very-light-gray-to-cyan-bluish-gray) !important;}.has-cool-to-warm-spectrum-gradient-background{background: var(--wp--preset--gradient--cool-to-warm-spectrum) !important;}.has-blush-light-purple-gradient-background{background: var(--wp--preset--gradient--blush-light-purple) !important;}.has-blush-bordeaux-gradient-background{background: var(--wp--preset--gradient--blush-bordeaux) !important;}.has-luminous-dusk-gradient-background{background: var(--wp--preset--gradient--luminous-dusk) !important;}.has-pale-ocean-gradient-background{background: var(--wp--preset--gradient--pale-ocean) !important;}.has-electric-grass-gradient-background{background: var(--wp--preset--gradient--electric-grass) !important;}.has-midnight-gradient-background{background: var(--wp--preset--gradient--midnight) !important;}.has-small-font-size{font-size: var(--wp--preset--font-size--small) !important;}.has-medium-font-size{font-size: var(--wp--preset--font-size--medium) !important;}.has-large-font-size{font-size: var(--wp--preset--font-size--large) !important;}.has-x-large-font-size{font-size: var(--wp--preset--font-size--x-large) !important;}
+.wp-block-navigation a:where(:not(.wp-element-button)){color: inherit;}
+:where(.wp-block-columns.is-layout-flex){gap: 2em;}
+.wp-block-pullquote{font-size: 1.5em;line-height: 1.6;}
+</style>
+<link rel='stylesheet' id='bcct_style-css' href='https://a16z.com/wp-content/plugins/better-click-to-tweet/assets/css/styles.css?ver=3.0' type='text/css' media='all' />
+<link rel='stylesheet' id='wp-parsely-style-css' href='https://a16z.com/wp-content/plugins/wp-parsely/wp-parsely.css?ver=1675354413' type='text/css' media='all' />
+<link rel='stylesheet' id='a16z-global-css' href='https://a16z.com/wp-content/themes/a16z-2015/client/build/css/global.27d2220000a030c51900.min.css?ver=1.03' type='text/css' media='all' />
+<link rel='stylesheet' id='a16z-single-css-css' href='https://a16z.com/wp-content/themes/a16z-2015/client/build/css/single.9017045666e734ff8bb2.min.css?ver=1.03' type='text/css' media='all' />
+<link rel='stylesheet' id='jetpack_css-css' href='https://c0.wp.com/p/jetpack/8.6/css/jetpack.css' type='text/css' media='all' />
+<script type='text/javascript' src='https://c0.wp.com/c/6.1.1/wp-includes/js/jquery/jquery.min.js' id='jquery-core-js'></script>
+<script type='text/javascript' src='https://c0.wp.com/c/6.1.1/wp-includes/js/jquery/jquery-migrate.min.js' id='jquery-migrate-js'></script>
+<script type='text/javascript' id='jetpack_related-posts-js-extra'>
+/* <![CDATA[ */
+var related_posts_js_options = {"post_heading":"h4"};
+/* ]]> */
+</script>
+<script type='text/javascript' src='https://c0.wp.com/p/jetpack/8.6/_inc/build/related-posts/related-posts.min.js' id='jetpack_related-posts-js'></script>
+<script type='text/javascript' src='https://cdn.optimizely.com/js/15432930010.js?ver=1.01' id='optimizely-js'></script>
+<script type='text/javascript' src='//info.a16z.com/js/forms2/js/forms2.min.js?ver=1.0' id='marketo-newsletter-js'></script>
+<link rel="https://api.w.org/" href="https://a16z.com/wp-json/" /><link rel="alternate" type="application/json" href="https://a16z.com/wp-json/wp/v2/posts/284194" /><link rel="EditURI" type="application/rsd+xml" title="RSD" href="https://a16z.com/xmlrpc.php?rsd" />
+<link rel="wlwmanifest" type="application/wlwmanifest+xml" href="https://a16z.com/wp-includes/wlwmanifest.xml" />
+<link rel='shortlink' href='https://wp.me/pa0Syt-1bVM' />
+
+<script type="text/javascript">var _sf_startpt=(new Date()).getTime()</script>
+
+<!-- BEGIN wp-parsely Plugin Version 1.14 -->
+<meta name="wp-parsely_version" id="wp-parsely_version" content="1.14"/>
+			<script type="application/ld+json">
+		{"@context":"http:\/\/schema.org","@type":"NewsArticle","mainEntityOfPage":{"@type":"WebPage","@id":"http:\/\/a16z.com\/2019\/01\/08\/crossing-the-chasm-in-practice-secular-trends\/"},"headline":"&#8216;Crossing the Chasm&#8217;, in Practice","url":"http:\/\/a16z.com\/2019\/01\/08\/crossing-the-chasm-in-practice-secular-trends\/","dateCreated":"2019-01-08T14:30:46Z","datePublished":"2019-01-08T14:30:46Z","dateModified":"2019-01-08T14:30:46Z","articleSection":"enterprise","author":[{"@type":"Person","name":"Martin Casado"}],"creator":["Martin Casado"],"keywords":["bottom up saas &amp; sales","pre-chasm","rise of the developer"],"publisher":{"@type":"Organization","name":"Andreessen Horowitz","logo":{"@type":"ImageObject","url":"https:\/\/a16z.com\/wp-content\/uploads\/2017\/12\/cropped-a16z-favicon.png"}}}
+		</script>
+
+			<!-- END wp-parsely Plugin Version 1.14 -->
+
+<link rel='dns-prefetch' href='//v0.wordpress.com'/>
+<link rel='dns-prefetch' href='//i0.wp.com'/>
+<link rel='dns-prefetch' href='//i1.wp.com'/>
+<link rel='dns-prefetch' href='//i2.wp.com'/>
+<link rel='dns-prefetch' href='//c0.wp.com'/>
+<style type='text/css'>img#wpstats{display:none}</style><link rel="alternate" type="application/rss+xml" title="Andreessen Horowitz &raquo; Feed" href="https://a16z.com/feed/" />			<script>
+				window.dataLayer = window.dataLayer || [];
+				window.dataLayer.push(
+					{"segment":"Enterprise","author":["Martin Casado"],"type":"post","Tag":["cloud computing","open source","go to market","going global","how innovation happens","marketing","bottom up SaaS &amp; sales","pre-chasm","rise of the developer"]}				);
+			</script>
+		<!-- Google Optimize Anti-flicker Snippet -->
+			<script>(function(a,s,y,n,c,h,i,d,e){s.className+=" "+y;h.start=1*new Date;
+			h.end=i=function(){s.className=s.className.replace(RegExp(" ? "+y),"")};
+			(a[n]=a[n]||[]).hide=h;setTimeout(function(){i();h.end=null},c);h.timeout=c;
+			})(window,document.documentElement,"async-hide","dataLayer",4000,
+			{"GTM-WHMSDPX":true});</script>
+			<script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({"gtm.start":
+			new Date().getTime(),event:"gtm.js"});var f=d.getElementsByTagName(s)[0],
+			j=d.createElement(s),dl=l!="dataLayer"?"&amp;l="+l:"";j.async=true;j.src=
+			"https://www.googletagmanager.com/gtm.js?id="+i+dl;f.parentNode.insertBefore(j,f);
+			})(window,document,"script","dataLayer","GTM-WHMSDPX");</script>    <script type="text/javascript">
+        !function(t,e,c,n,o,r){t[n]=t[n]||function(){(t[n].q=t[n].q||[]).push(arguments)},setTimeout(function(){o=e.createElement("script"),r=e.getElementsByTagName("script")[0],o.src=c,r.parentNode.insertBefore(o,r)},0)}(window,document,"https://ext.chtbl.com/trackable.js","trackable");
+
+        // Initialize with your Trackable API key
+        trackable('init', 'b44008f3b116fc2e557d345d36a459ad');
+    </script>
+    <link rel="icon" href="https://a16z.com/wp-content/uploads/2021/02/cropped-favicon-512-1-32x32.png" sizes="32x32" />
+<link rel="icon" href="https://a16z.com/wp-content/uploads/2021/02/cropped-favicon-512-1-192x192.png" sizes="192x192" />
+<link rel="apple-touch-icon" href="https://a16z.com/wp-content/uploads/2021/02/cropped-favicon-512-1-180x180.png" />
+<meta name="msapplication-TileImage" content="https://a16z.com/wp-content/uploads/2021/02/cropped-favicon-512-1-270x270.png" />
+			<style type="text/css" id="wp-custom-css">
+				#wpstats {
+	display: none;
+}
+
+.wp-content iframe.youtube-player {
+	height: 360px !important;
+}
+
+.wp-video-shortcode div {
+	display: flex;
+	font-size: .938rem;
+	line-height: 1;
+	margin-bottom: 0;
+}
+
+.wp-video-shortcode .mejs-time {
+	font-size: 11px;
+}
+
+#post-314416 + .bio-lp-newsletter {
+	display: none;
+}			</style>
+		    <style>
+	    .ab-test-b {
+		    display: none !important;
+	    }
+
+	    .ab-test .ab-test-a {
+		    display: none !important;
+	    }
+
+	    .ab-test .ab-test-b {
+		    display: block !important;
+	    }
+    </style>
+</head>
+<body class="post-template-default single single-post postid-284194 single-format-standard">
+	<div id="page" class="site">
+		<a class="skip-link screen-reader-text" href="#content">Skip to content</a>
+        		
+		<!-- Vertical Pages Rebranded Header -->
+		
+        <!-- Rebranded Header -->
+                <style>
+            body {
+                padding: 0;
+                margin: 0;
+            }
+
+            body > .site {
+                max-width: none;
+                background: transparent;
+            }
+
+            body .site-content {
+                margin-bottom: 0;
+                padding: 0;
+            }
+        </style>
+
+                        <header id="header" class="header-new">
+                                    <div class="bg-header" style=""></div>
+                        <div class="container">
+                <div class="header-holder">
+                    <div class="logo-wrap">
+                        <a class="logo" href="/">
+                                                            <svg width="210" height="48" xmlns="http://www.w3.org/2000/svg" viewBox="0 0 210 48"><path class="lr0" d="M110.6,29c-5.3,0-9.5,4.1-9.5,9.5s4.3,9.5,9.5,9.5c5.3,0,9.5-4.2,9.5-9.5C120.1,33.1,115.9,29,110.6,29z M110.6,32.8c3.2,0,5.6,2.4,5.6,5.7s-2.5,5.7-5.6,5.7c-3.2,0-5.6-2.4-5.6-5.7C104.9,35.2,107.4,32.8,110.6,32.8z"/><path d="M189.7,41.9v-8.7h4.5v-3.8h-4.5v-5.1l-3.9,1.2v3.9h-3.3v3.8h3.3v8.7c0,4.7,2.4,6.4,8.4,5.6V44C191.2,44.2,189.7,44.2,189.7,41.9z"/><path d="M209.9,43.9H201l8.9-10.7l0,0v-3.6h-13.8v3.6h8.9l-8.9,10.7l0,0v3.7h13.8V43.9z"/><path d="M52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2L52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2C52.9,16.3,52.9,16.3,52.9,16.2z"/><path class="lr0" d="M54.2,1.2l4-1.2v25.3h-4v-1.4c-1.8,1.3-4.1,2-6.6,1.8c-4.4-0.4-8.1-4-8.5-8.5c0-0.4-0.1-0.7-0.1-1.1l0,0l0,0l0,0l0,0l0,0l0,0c0-0.3,0-0.6,0.1-0.9c0-0.1,0-0.1,0-0.2l0,0l0,0v-0.1v-0.1c0-0.2,0.1-0.4,0.1-0.6c0-0.1,0-0.2,0.1-0.2v-0.1v-0.1c0-0.2,0.1-0.3,0.1-0.5c0-0.1,0.1-0.2,0.1-0.3l0,0v-0.1l0,0c0.1-0.2,0.1-0.3,0.2-0.5c0-0.1,0.1-0.2,0.1-0.3c0,0,0,0,0-0.1c0.1-0.2,0.2-0.3,0.2-0.5c0.1-0.1,0.1-0.2,0.2-0.3l0,0c0.1-0.1,0.2-0.3,0.3-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.2-0.3,0.3-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.2-0.2,0.4-0.4c0.1-0.1,0.2-0.2,0.3-0.3s0.3-0.2,0.4-0.3c0.4-0.2,0.5-0.3,0.6-0.4c0.1-0.1,0.3-0.2,0.4-0.3h0.1C43.7,8,43.8,8,43.9,7.9c0.2-0.1,0.3-0.2,0.5-0.2h0.1l0,0c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.3-0.1,0.5-0.2l0,0l0,0h0.1l0,0c0.1,0,0.2-0.1,0.3-0.1c0.2-0.1,0.3-0.1,0.5-0.1l0,0h0.1h0.1c0.1,0,0.2,0,0.3-0.1c0.2,0,0.4-0.1,0.6-0.1l0,0h0.1c0.1,0,0.1,0,0.2,0c0.3,0,0.7-0.1,1-0.1c2.1,0,4,0.7,5.6,1.8L54.2,1.2L54.2,1.2z M47.4,21.7c3.6,0.8,6.8-2,6.8-5.4v-0.1c0-3.1-2.5-5.6-5.6-5.6c-0.2,0-0.4,0-0.6,0h-0.1l0,0c0,0,0,0-0.1,0s-0.3,0-0.4,0.1h-0.1l0,0l0,0c-0.1,0-0.2,0.1-0.3,0.1s-0.2,0.1-0.2,0.1c-0.1,0-0.2,0.1-0.3,0.1s-0.1,0.1-0.2,0.1c-0.1,0.1-0.2,0.1-0.3,0.2c-0.1,0-0.1,0.1-0.2,0.1c-0.1,0.1-0.2,0.1-0.3,0.2c0,0,0,0-0.1,0l-0.1,0.1c-0.1,0.1-0.2,0.2-0.3,0.3l0,0l0,0l0,0l0,0c0,0,0,0-0.1,0.1s-0.3,0.3-0.4,0.4l0,0l0,0c-0.1,0.1-0.2,0.3-0.3,0.4c0,0,0,0.1-0.1,0.1c0,0,0,0,0,0.1c-0.1,0.1-0.1,0.2-0.2,0.3c0,0.1-0.1,0.1-0.1,0.2l0,0c-0.1,0.1-0.1,0.2-0.1,0.3s-0.1,0.1-0.1,0.2l0,0c0,0.1-0.1,0.2-0.1,0.3s0,0.2-0.1,0.2c0,0.1,0,0.2-0.1,0.4c0,0.1,0,0.2,0,0.2c0,0.1,0,0.3,0,0.4v0.1c0,0.1,0,0.1,0,0.2c0,0.4,0,0.8,0.1,1.3C43.6,19.6,45.3,21.3,47.4,21.7z"/><path d="M14.5,16.2L14.5,16.2L14.5,16.2L14.5,16.2C14.5,16.3,14.5,16.3,14.5,16.2C14.5,16.3,14.5,16.3,14.5,16.2z"/><path class="lr0" d="M15.5,7.3v1.2C14,7.4,12,6.7,10,6.7c-5.6,0-10.1,4.9-9.5,10.6c0.5,4.4,4.1,8,8.5,8.5c2.5,0.2,4.8-0.5,6.6-1.8v1.4h4V7.3H15.5z M15.5,16.3c0,3.5-3.2,6.2-6.8,5.4c-2.1-0.4-3.8-2.1-4.3-4.3c-0.7-3.6,2.1-6.8,5.6-6.8C13,10.6,15.5,13.1,15.5,16.3L15.5,16.3z"/><path d="M131.1,29.2v4.2c-2.6-0.2-5.6,1-5.6,5.1v9.1h-3.9V29.5h3.9v3C126.6,30.1,128.8,29.2,131.1,29.2z"/><path class="lr0" d="M140.5,29c-5.3,0-9.5,4.1-9.5,9.5s4.3,9.5,9.5,9.5c5.3,0,9.5-4.2,9.5-9.5C150.1,33.1,145.9,29,140.5,29z M140.5,32.8c3.2,0,5.6,2.4,5.6,5.7s-2.5,5.7-5.6,5.7c-3.2,0-5.6-2.4-5.6-5.7C134.9,35.2,137.4,32.8,140.5,32.8z"/><path d="M175.8,29.5l-5.7,18.1h-3.8l-3.8-12.2l-3.8,12.2h-3.8l-5.7-18.1h4.1l3.5,12.5l3.8-12.5h3.7l3.8,12.5l3.5-12.5C171.6,29.5,175.8,29.5,175.8,29.5z"/><path d="M181,29.5h-3.9v18.1h3.9V29.5z"/><path d="M69.2,7v4.2c-2.6-0.2-5.6,1-5.6,5.1v9.1h-3.9V7.3h3.9v3C64.7,7.9,66.9,7,69.2,7z"/><path class="lr0" d="M87.1,21.9L87.1,21.9L87.1,21.9L87.1,21.9L87.1,21.9v9.9c1.2-1.9,3.1-2.8,5.6-2.8c4,0,6.9,2.7,6.9,7.4v11.2h-3.9V36.9c0-2.7-1.6-4.2-4-4.2c-2.6,0-4.6,1.5-4.6,5.2v9.7h-3.9V25.1c-1.2,0.5-2.5,0.8-4,0.8c-6,0-9.8-4.1-9.8-9.5s3.9-9.5,9.5-9.5c5.4,0,9.1,4.3,9.1,9.5c0,0.5-0.1,1.1-0.1,1.6H73.4c0.6,2.8,2.9,4.3,5.8,4.3c1.7,0,3-0.6,4-1.4c0.3-0.2,0.5-0.5,0.7-0.8L87.1,21.9z M78.8,10.4c2.4,0,4.6,1.3,5.2,4.4H73.4C73.9,12.1,75.9,10.4,78.8,10.4z"/><path class="lr0" d="M103.3,20c-0.9,1.3-2.5,2.2-4.7,2.2c-2.9,0-5.2-1.4-5.8-4.3h14.4c0.1-0.5,0.1-1.1,0.1-1.6c0-5.2-3.7-9.5-9.1-9.5c-5.7,0-9.5,4.2-9.5,9.5c0,5.4,3.9,9.5,9.8,9.5c3.5,0,6.3-1.5,7.9-3.9L103.3,20z M98.3,10.4c2.4,0,4.6,1.3,5.2,4.4H92.8C93.4,12.1,95.4,10.4,98.3,10.4z"/><path class="lr0" d="M148,22.3c2.2,0,3.8-1,4.7-2.2l3.2,1.9c-1.7,2.5-4.4,3.9-7.9,3.9c-6,0-9.8-4.1-9.8-9.5s3.9-9.5,9.5-9.5c5.4,0,9.1,4.3,9.1,9.5c0,0.5-0.1,1.1-0.1,1.6h-14.4C142.8,20.8,145.1,22.3,148,22.3z M152.8,14.8c-0.5-3.1-2.8-4.4-5.2-4.4c-2.9,0-4.9,1.7-5.5,4.4C142.1,14.8,152.8,14.8,152.8,14.8z"/><path d="M177.1,25.4h3.9v-3.5h-3.9V25.4z"/><path d="M30.6,6.8c-2.5,0-4.4,0.9-5.6,2.8V7.5l0,0V7.2h-3.9v1.5l0,0v16.6H25v-9.7c0-3.7,2-5.2,4.6-5.2c2.5,0,4,1.4,4,4.2v10.7h3.9v-11C37.6,9.6,34.7,6.8,30.6,6.8z"/><path d="M162.6,25.4h-3.9V7.3h3.9v2.3c1.2-1.9,3.1-2.8,5.6-2.8c4,0,6.9,2.7,6.9,7.4v11.1h-3.9V14.7c0-2.7-1.6-4.2-4-4.2c-2.6,0-4.6,1.5-4.6,5.2V25.4z"/><path d="M112.5,12.3c0-1.3,1.2-1.9,2.6-1.9s2.6,0.6,3.3,1.8l3.4-1.7c-1.3-2.3-3.7-3.7-6.7-3.7c-3.7,0-6.6,2.1-6.6,5.5c0,3.8,3.3,4.7,6.1,5.5c2,0.6,3.6,1,3.6,2.4s-1.3,2-3.1,2c-1.7,0-3.1-0.7-3.8-2l-3.5,1.7c1.2,2.4,3.8,3.9,7.2,3.9c3.9,0,7.1-2,7.1-5.6c0-3.9-3.4-4.9-6.1-5.6C114.2,14.1,112.5,13.6,112.5,12.3z"/><path d="M130.2,10.4c-1.4,0-2.6,0.6-2.6,1.9c0,1.4,1.7,1.8,3.6,2.4c2.8,0.8,6.1,1.7,6.1,5.6c0,3.6-3.1,5.6-7.1,5.6c-3.5,0-6-1.5-7.2-3.9l3.5-1.7c0.7,1.3,2,2,3.8,2c1.7,0,3.1-0.6,3.1-2c0-1.3-1.7-1.8-3.6-2.4c-2.8-0.8-6.1-1.7-6.1-5.5c0-3.4,2.9-5.5,6.6-5.5c2.9,0,5.4,1.4,6.7,3.7l-3.4,1.7C132.8,11,131.6,10.4,130.2,10.4z"/></svg>                                                    </a>
+                                                <span class="tagline">It&#039;s time to build</span>
+                    </div>
+                                        <a href="#" class="nav-opener"><span><span class="sr-only">Nav Opener</span></span></a>
+                    <nav id="nav">
+                        <ul>
+	                        	                        	                                                    <li class="">
+                                <a href="/portfolio/">Portfolio</a>
+                                                            </li>
+                            	                        	                                                    <li class=" is-single">
+                                <a href="/team/">Team</a>
+                                                            </li>
+                            	                        	                                                    <li class="has-drop is-single">
+                                <a href="#">Focus Areas</a>
+                                                                    <div class="nav-drop">
+                                        <div class="holder">
+                                            <div class="two-cols">
+                                                                                                <div class="col">
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/american-dynamism/">American Dynamism</a></li>
+	                                                                                                            <li><a href="/bio/">Bio + Health</a></li>
+	                                                                                                            <li><a href="/cultural-leadership-fund/">Cultural Leadership Fund</a></li>
+	                                                                                                            <li><a href="/consumer/">Consumer</a></li>
+	                                                                                                            <li><a href="https://a16zcrypto.com">Crypto</a></li>
+	                                                                                                            <li><a href="/enterprise/">Enterprise</a></li>
+	                                                                                                            <li><a href="/fintech/">Fintech</a></li>
+	                                                                                                            <li><a href="/games/">Games</a></li>
+	                                                                                                            <li><a href="/growth/">Growth</a></li>
+	                                                                                                            <li><a href="/talent-x-opportunity/">Talent x Opportunity</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                                            </li>
+                            	                        	                                                    <li class="has-drop">
+                                <a href="#">Content</a>
+                                                                    <div class="nav-drop">
+                                        <div class="holder">
+                                            <div class="two-cols">
+                                                                                                <div class="col">
+	                                                                                                        <a href="/content/" class="title">Topics</a>
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/category/bio-health/">Bio + Health</a></li>
+	                                                                                                            <li><a href="/category/consumer/">Consumer</a></li>
+	                                                                                                            <li><a href="/category/the-creator-economy/">Creator Economy</a></li>
+	                                                                                                            <li><a href="/category/marketplaces/">Marketplaces</a></li>
+	                                                                                                            <li><a href="/category/gaming/">Gaming &amp; Social</a></li>
+	                                                                                                            <li><a href="/category/fintech/">Fintech</a></li>
+	                                                                                                            <li><a href="/category/enterprise-b2b-saas/">Enterprise &amp; SaaS</a></li>
+	                                                                                                            <li><a href="/category/security-privacy/">Security &amp; Privacy</a></li>
+	                                                                                                            <li><a href="/category/blockchain-cryptocurrencies/">Cryptocurrencies &amp; Blockchains</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                                <div class="col">
+	                                                                                                        <a href="/content/" class="title">Type</a>
+	                                                                                                    <ul>
+	                                                                                                            <li><a href="/articles/">Articles</a></li>
+	                                                                                                            <li><a href="/videos/">Video</a></li>
+	                                                                                                            <li><a href="https://future.com/podcast-network/">Podcasts</a></li>
+	                                                                                                            <li><a href="https://info.a16z.com/newsletters.html">Newsletters</a></li>
+	                                                                                                        </ul>
+                                                </div>
+                                                                                            </div>
+                                        </div>
+                                    </div>
+                                                            </li>
+                            	                        	                                                    <li class="">
+                                <a href="/about/">About</a>
+                                                            </li>
+                            	                        	                                                    <li class="">
+                                <a href="/about/jobs/">Jobs</a>
+                                                            </li>
+                                                                                        <li>
+                                    <a href="https://info.a16z.com/newsletters.html" target="" class="btn btn-orange">
+                                        Newsletters                                    </a>
+                                </li>
+                                                    </ul>
+                    </nav>
+                                        <div class="search style-1">
+                        <div class="search-opener-wrap">
+                            <a href="#" class="icon-search search-opener"></a>
+                        </div>
+                        <div class="search-box">
+                            <form role="search" method="get" action="/">
+                                <button for="search">
+                                    <span class="sr-only">search</span>
+                                </button>
+                                <input type="search" id="search" placeholder="Search" name="s" aria-label="search" autocomplete="false">
+                            </form>
+                            <a href="#" class="close search-opener"><span class="sr-only">Close</span></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </header>
+                <!-- Rebranded Header End -->
+
+		<div id="content" class="site-content sidebar--none">
+			<main id="primary" class="content-area site-content__primary" role="main">
+                                <div class="content-new">
+                    <div class="container">
+										
+<article id="post-284194">
+        <main id="main">
+        <div class="blog-section">
+            <header class="blog-header">
+                <h1>&#8216;Crossing the Chasm&#8217;, in Practice</h1>
+	            
+<div class="byline byline--entry-header">
+	<span class="byline__prefix">
+		by	</span>
+	<span class="byline__authors">
+		
+			<a href="https://a16z.com/author/martin-casado/" target="" class="author">Martin Casado</a>		</span>
+</div>
+            </header>
+            <div class="blog-content-area">
+                <aside class="blog-aside">
+                    <div class="blog-aside__inner">
+	                    
+<ul class="post-terms post-terms--single">
+		
+		<li>
+			<a rel="tag" href="https://a16z.com/category/cloud-computing/">
+			cloud computing			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/category/open-source/">
+			open source			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/advice-and-how-to/go-to-market/">
+			go to market			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/advice-and-how-to/going-global/">
+			going global			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/advice-and-how-to/how-innovation-happens/">
+			how innovation happens			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/advice-and-how-to/marketing/">
+			marketing			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/bottom-up-saas/">
+			bottom up SaaS &amp; sales			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/pre-chasm/">
+			pre-chasm			</a>
+		</li>
+			
+		<li>
+			<a rel="tag" href="https://a16z.com/tag/a-focus-on-developers/">
+			rise of the developer			</a>
+		</li>
+	</ul>
+	                    <ul class="blog-social-networks">
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-fb" href="https://www.facebook.com/sharer/sharer.php?u=https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/" target="_blank" data-url="https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/">
+			Facebook
+		</a>
+	</li>
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-linkedin" href="https://www.linkedin.com/shareArticle?mini=true&#038;url=https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/" target="_blank" data-url="https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/" data-title="&#8216;Crossing the Chasm&#8217;, in Practice">
+			LinkedIn
+		</a>
+	</li>
+	<li class="social-sharing__item">
+		<a class="social-sharing__link share-twitter" href="https://twitter.com/intent/tweet/?text=&#8216;Crossing%20the%20Chasm&#8217;,%20in%20Practice&#038;url=https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/&#038;via=a16z"  data-url="https://a16z.com/2019/01/08/crossing-the-chasm-in-practice-secular-trends/" data-via="a16z" data-text="&#8216;Crossing the Chasm&#8217;, in Practice">
+			Twitter
+		</a>
+	</li>
+</ul>
+                                            </div>
+                </aside>
+                <div class="blog-content entry-content__primary">
+                    <div class="wp-content">
+	                    <p><span style="font-weight: 400">The topic of pre-chasm startups is one I’ve long been obsessed with, as a <a href="https://a16z.com/author/martin-casado/" target="_blank" rel="noopener noreferrer">former entrepreneur</a></span><span style="font-weight: 400"> who (along with many colleagues!) founded a company around a pre-chasm technology (software-defined networking), and was involved from academic </span><a href="https://a16z.com/2017/08/21/ethane-taking-control-of-the-enterprise/" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400">paper</span></a><span style="font-weight: 400"> to </span><a href="http://fortune.com/2017/01/26/vmware-billion-dollar-business/" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400">product line</span></a><span style="font-weight: 400">. So it’s no surprise I’m particularly interested in enterprise startups that haven’t yet crossed the chasm (hence “</span><a href="https://a16z.com/tag/pre-chasm/" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400">pre-chasm</span></a><span style="font-weight: 400">”), even </span><a href="https://a16z.com/2018/12/27/endless-chasm-enterprise-startups/" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400">recently arguing</span></a><span style="font-weight: 400"> that it’s ok if some never do. Because the application of the crossing-the-chasm model is not always straightforward in practice. This is particularly true as trends in open source, cloud, and bottom-up services drive technology adoption within the enterprise.</span></p>
+<p><span style="font-weight: 400">Geoffrey Moore &#8212; who first published </span><i><span style="font-weight: 400">Crossing the Chasm </span></i><span style="font-weight: 400">in 1991 &#8212; wrote a wonderfully </span><a href="https://www.linkedin.com/pulse/reply-unending-chasm-how-survive-geoffrey-moore/" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400">thoughtful response</span></a><span style="font-weight: 400"> to <a href="https://a16z.com/2018/12/27/endless-chasm-enterprise-startups/" target="_blank" rel="noopener noreferrer">my piece</a>, overall observing that “as with all ideas that get spread virally, [the meme of crossing the chasm] has accumulated meanings that were not intended, and in some cases are just plain wrong”. I highly recommend you read the full response and also recommend the book. Andy Rachleff (lecturer at Stanford, founder of Benchmark, and one of my board members for over 5 years) quoted from it often, and our company used it as the foundational model for thinking through our go-to-market strategy. We were such fans that we asked Moore to come and speak with the execs at VMware (our acquirer) in order to further dig into the ideas and implications as we brought our new product to market; that too was hugely useful and underlied our strategy in what is now a billion-dollar product line.</span></p>
+<p><span style="font-weight: 400">So, I’m a fan of Moore’s work and agree with much of his post. But the broader point I’m making, and would like to further emphasize in this post, is that the application of the crossing-the-chasm model isn’t straightforward. From the perspective of a founder, the model doesn’t always play out as you’d expect; there is a lot of nuance to applying it in practice. And I’d argue those nuances are getting more pronounced given the faster pace of technology today and the secular trends I mention above.</span></p>
+<p>Below I’ll focus on just the first two of the areas we covered in the previous posts, although similar arguments can be made throughout.</p>
+<p><span style="font-weight: 400">First, let’s take the point about geographic expansion. I had originally stated that geographic expansion was yet another chasm. As Moore <a href="https://www.linkedin.com/pulse/reply-unending-chasm-how-survive-geoffrey-moore/" target="_blank" rel="noopener noreferrer">reminds</a> us, the three dependencies for crossing the chasm are “a compelling use case that will create pull, a whole product that nails the use case, and a <em>word-of-mouth community that can communicate and reinforce the marketing message </em>[italics added].&#8221; </span></p>
+<p><span style="font-weight: 400">He further adds that when you enter into a new geography, &#8220;it is very hard to maintain this discipline, particularly if you are going through a product-oriented distribution channel&#8221;. </span><span style="font-weight: 400">So while it’s true that the model then holds here in theory, in practice, it’s messy, and not just because it’s hard to “maintain the discipline”. It’s because in applying the model, many founders make the inferential leap that a market exists with a word-of-mouth community if the other two conditions are met. </span></p>
+<p><span style="font-weight: 400">In our case, we knew that the NY financial sector spoke frequently with the UK financial sector, and since we had a lot of positive customer traction in the former geography, we chose to go internationally along this vertical precisely because we were trying to stay within a word-of-mouth community. However, we quickly found out that in the UK, the companies we were targeting had very different competitive environments, often had different technology and operational stacks, and relied on entirely different partner relationships. </span><span style="font-weight: 400">Particularly relevant here is that much of the technology stack (and the surrounding ecosystem) were driven as much by organic, bottom-up adoption of open source technologies as much by top-down vendor sales, and were different enough from their NY counterparts that we couldn’t sell to them. </span></p>
+<p><span style="font-weight: 400">While we ultimately figured it out, it took years, and by then we’d already tackled multiple other unrelated verticals. I</span><span style="font-weight: 400">f I were to do it again, I would have first focused on expanding to those different verticals within the U.S. rather than trying to expand within a reference/ word-of-mouth community internationally. For us, the chasm across geographies was far wider than the power of word-of-mouth networks that could bridge that chasm. Now, </span><span style="font-weight: 400">this point may seem obvious to those who have done this before. But for a first-time founder like me it wasn’t, and unfortunately, I’ve seen this go similarly sideways with a number of other companies I’ve observed over the years, too.</span></p>
+<p><span style="font-weight: 400">The other point I want to make in response to Moore’s argument about incumbents lack of desire to compete with startups: </span></p>
+<p style="padding-left: 30px"><em><span style="font-weight: 400">&#8220;Large incumbents have neither the means nor the interest to block a chasm-crossing </span><span style="font-weight: 400">play because they cannot operate at the small scale involved. $50M to $100M markets </span><span style="font-weight: 400">are a godsend to a fledgling start-up, but they are a waste of time for a multi-billion-dollar </span><span style="font-weight: 400">enterprise. What they can do is pre-empt a tornado market or, worst case, destroy it by </span><span style="font-weight: 400">blocking access to the disruptors, but this ploy only works well in consumer markets. In </span><span style="font-weight: 400">B2B markets, as long as the offer creates a genuine pull, your customer base can </span><span style="font-weight: 400">pressure the incumbent to play ball.&#8221;</span></em></p>
+<p><span style="font-weight: 400">I disagree. The enterprise landscape has evolved to the point where not only do incumbents bother to compete with pre-chasm products, they’re even more able to do so because of </span><b>cloud</b><span style="font-weight: 400"> and </span><b>open source</b><span style="font-weight: 400">. This is especially pronounced where incumbents own the technology distribution channel. Take for example AWS: They have full visibility on all the services that run on them; if they see a particular service gaining traction, they can easily offer the services themselves if the code is open source. </span></p>
+<p><span style="font-weight: 400">In fact, this has been such an issue that startups have taken on the potential fallout with their open source communities to change their licenses to disallow this open behavior. </span><a href="https://www.confluent.io/blog/license-changes-confluent-platform" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400">Confluent</span></a><span style="font-weight: 400"> and </span><a href="https://www.mongodb.com/press/mongodb-issues-new-server-side-public-license-for-mongodb-community-server" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400">MongoDB</span></a><span style="font-weight: 400"> are just two recent examples; as Mongo co-founder and CTO Eliot Horowitz <a href="https://www.mongodb.com/press/mongodb-issues-new-server-side-public-license-for-mongodb-community-server" target="_blank" rel="noopener noreferrer">said</a>: &#8220;Unfortunately, once an open source project becomes interesting, it is too easy for cloud vendors who have not developed the software to capture all of the value while contributing little back to the community.” </span></p>
+<p><span style="font-weight: 400">And often, open source projects are “interesting” long before anyone figures out how to monetize them. The examples are many: In 2010 when Rackspace announced Openstack, it changed the entire landscape for cloud orchestration, causing many startups in the space to pivot or exit soon after. At the time, on-prem cloud offerings were still “pre-chasm”, and therefore a tough sell, yet it was a sensible move for Rackspace to gain relevancy and mindshare. Google later changed the landscape again with Kubernetes and Istio, which have shaken up cloud orchestration and L7 services within the datacenter.</span></p>
+<p><span style="font-weight: 400">In every one of these instances startups in the space are having to contend with moves by an incumbent. </span></p>
+<p><span style="font-weight: 400">Furthermore, the observation that “</span><i><span style="font-weight: 400">What [the incumbents] can do is pre-empt a tornado market, or worse case, destroy it by blocking access to the disruptors, but this </span></i><i><span style="font-weight: 400">ploy only works well in consumer markets</span></i><span style="font-weight: 400">” is no longer true.</span><span style="font-weight: 400"> With the organic nature of bottom-up and </span><b>developer-led adoption</b><span style="font-weight: 400">, enterprise companies are starting to see more and more </span><a href="https://a16z.com/2018/08/25/growth-saas-enterprise-bottomsup/" target="_blank" rel="noopener noreferrer"><span style="font-weight: 400">consumer-style growth</span></a><span style="font-weight: 400"> curves. As such, we see incumbents release open source or free services to pre-empt a market (or destroy it before it can flourish). </span></p>
+<p><span style="font-weight: 400">I think the incumbents have learned the lessons from the history of disruption and now realize that even a non-revenue-generating developer phenomenon can still be a huge existential threat. (It certainly was the case when I ran a business unit of an incumbent.) </span><span style="font-weight: 400">This isn’t to say companies can’t navigate these situations; they can! I just wouldn’t base my strategy on the assumption that the incumbents will not and cannot respond. They can and they do.</span></p>
+<p><span style="font-weight: 400">I want to thank Geoffrey again for this respectful exchange; I remain a huge fan of his and of the model. But for those companies that are struggling in the chasm and finding it to be less neat than they (or their boards) expect, I hope this back-and-forth offers some solace, if not some guidance, in the even messier world we live in today.</span></p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p>&nbsp;</p>
+<p><em><span style="font-weight: 400">The views expressed here are those of the individual AH Capital Management, L.L.C. (“a16z”) personnel quoted and are not the views of a16z or its affiliates. Certain information contained in here has been obtained from third-party sources, including from portfolio companies of funds managed by a16z. While taken from sources believed to be reliable, a16z has not independently verified such information and makes no representations about the enduring accuracy of the information or its appropriateness for a given situation.</span></em></p>
+<p><em><span style="font-weight: 400">This content is provided for informational purposes only, and should not be relied upon as legal, business, investment, or tax advice. You should consult your own advisers as to those matters. References to any securities or digital assets are for illustrative purposes only, and do not constitute an investment recommendation or offer to provide investment advisory services. Furthermore, this content is not directed at nor intended for use by any investors or prospective investors, and may not under any circumstances be relied upon when making a decision to invest in any fund managed by a16z. (An offering to invest in an a16z fund will be made only by the private placement memorandum, subscription agreement, and other relevant documentation of any such fund and should be read in their entirety.) Any investments or portfolio companies mentioned, referred to, or described are not representative of all investments in vehicles managed by a16z, and there can be no assurance that the investments will be profitable or that other investments made in the future will have similar characteristics or results. A list of investments made by funds managed by Andreessen Horowitz (excluding investments and certain publicly traded cryptocurrencies/ digital assets for which the issuer has not provided permission for a16z to disclose publicly) is available at https://a16z.com/investments/.</span></em></p>
+<p><em><span style="font-weight: 400">Charts and graphs provided within are for informational purposes solely and should not be relied upon when making any investment decision. Past performance is not indicative of future results. The content speaks only as of the date indicated. Any projections, estimates, forecasts, targets, prospects, and/or opinions expressed in these materials are subject to change without notice and may differ or be contrary to opinions expressed by others. Please see https://a16z.com/disclosures for additional important information.</span></em></p>
+                    </div>
+	                                    <div class="entry-content__post-date">
+                        January 8, 2019                    </div>
+	                                </div>
+                <aside class="blog-aside-right">
+                    <div class="blog-aside-right__inner">
+                                            </div>
+                </aside>
+            </div>
+        </div>
+    </main>
+</article>
+
+<section class="bio-lp-newsletter" data-component="subscribeSection" style="background: #F2F2F2 ">
+    <div class="bio-lp-newsletter__container">
+        <div class="bio-lp-newsletter__form">
+            <div class="form-wrap" id="vlp-signup-form-01">
+				                    <h2 class="bio-lp-newsletter__title">
+						The enterprise is changing                    </h2>
+								                    <p class="bio-lp-newsletter__text">
+						Sign up for our enterprise newsletter to get the a16z take on the trends reshaping B2B and enterprise tech.                    </p>
+				                <form class="input-addon"
+                      data-formID="1565"
+                      data-formInstance="subscribe-footer"
+                      target="_blank"
+                      id="mktoForm-1565"
+                      data-thankyou-message="#vlp-signup-ty-01"
+                      data-thankyou-container="#vlp-signup-form-01"
+                ></form>
+            </div>
+            <div id="vlp-signup-ty-01" class="bio-lp-newsletter__thanks-msg thanks-msg" style="display: none;">
+                <div class="title-wrap">
+                    <h2>Thanks for signing up.</h2>
+                </div>
+                <p>Check your inbox for a welcome note.</p>
+            </div>
+        </div>
+    </div>
+</section>
+                                    </div>
+                </div>
+			    			</main>
+
+			
+		</div><!-- #content -->
+
+		
+        <footer id="footer" class="footer-new">
+                        <div class="footer-above">
+                <div class="container">
+                    <div class="footer-l">
+                        <span class="copyright">
+                            Software is eating the world                        </span>
+                    </div>
+                </div>
+            </div>
+                        <div class="container">
+                <div class="footer-l">
+                    <span class="copyright">
+                        &copy; 2023 Andreessen Horowitz                    </span>
+                                            <div class="footer-above--mobile">
+                            <div class="container">
+                                <div class="footer-l">
+                        <span class="copyright">
+                            Software is eating the world                        </span>
+                                </div>
+                            </div>
+                        </div>
+                                        <ul class="social-networks site-footer__social-media-menu">
+	                    <div class="menu-social-media-container"><ul id="social-media-menu" class="menu"><li id="menu-item-208636" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-208636"><a href="https://twitter.com/a16z">Twitter</a></li>
+<li id="menu-item-208637" class="menu-item menu-item-type-custom menu-item-object-custom menu-item-208637"><a href="https://a16z.simplecast.com">Simplecast</a></li>
+</ul></div>                    </ul>
+                </div>
+                <nav class="footer-nav">
+	                <div class="menu-footer-2017-container"><ul id="utilities-menu" class="menu"><li id="menu-item-13150" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13150"><a href="https://a16z.com/about/contact/">Contact</a></li>
+<li id="menu-item-208638" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-208638"><a href="https://a16z.com/about/jobs/">Jobs</a></li>
+<li id="menu-item-296893" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-296893"><a href="https://a16z.com/briefings/">Briefings</a></li>
+<li id="menu-item-13267" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-13267"><a href="https://a16z.com/tos-privacy/">Terms of Use &amp; Privacy</a></li>
+<li id="menu-item-284008" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-284008"><a href="https://a16z.com/disclosures/">Disclosures</a></li>
+<li id="menu-item-95459" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-95459"><a href="https://a16z.com/conduct/">Conduct</a></li>
+<li id="menu-item-300281" class="menu-item menu-item-type-post_type menu-item-object-page menu-item-300281"><a href="https://a16z.com/values/">Who We Are</a></li>
+</ul></div>                </nav>
+            </div>
+        </footer>
+
+		
+			</div><!-- #page -->
+
+		<script type="text/javascript">
+						var _sf_async_config={};
+			_sf_async_config.uid = 66597;
+			_sf_async_config.domain = "a16z.com";
+			_sf_async_config.useCanonical = true;
+				(function(){
+			        function loadChartbeat() {
+					window._sf_endpt=(new Date()).getTime();
+					var e = document.createElement('script');
+					e.setAttribute('language', 'javascript');
+					e.setAttribute('type', 'text/javascript');
+					e.setAttribute('src', '//static.chartbeat.com/js/chartbeat.js');
+					document.body.appendChild(e);
+				  }
+				  var oldonload = window.onload;
+				  window.onload = (typeof window.onload != 'function') ?
+					 loadChartbeat : function() { try { oldonload(); } catch (e) { loadChartbeat(); throw e} loadChartbeat(); };
+				})();
+		</script>
+
+
+<!-- START Parse.ly Include: Standard -->
+
+<div id="parsely-root" style="display: none">
+	<div id="parsely-cfg" data-parsely-site="a16z.com"></div>
+</div>
+<script data-cfasync="false">
+	(function (s, p, d) {
+		var h = d.location.protocol, i = p + "-" + s,
+			e = d.getElementById(i), r = d.getElementById(p + "-root"),
+			u = h === "https:" ? "d1z2jf7jlzjs58.cloudfront.net"
+				: "static." + p + ".com";
+		if (e) return;
+		e = d.createElement(s);
+		e.id = i;
+		e.async = true;
+		e.setAttribute('data-cfasync', 'false');
+		e.src = h + "//" + u + "/p.js";
+		r.appendChild(e);
+	})("script", "parsely", document);
+</script>
+
+<!-- END Parse.ly Include: Standard -->
+<noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-WHMSDPX" height="0" width="0" style="display:none"></iframe></noscript><script type='text/javascript' src='https://c0.wp.com/p/jetpack/8.6/_inc/build/photon/photon.min.js' id='jetpack-photon-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/build/js/global.1f0df408088a112ee859.bundle.min.js?ver=1.03' id='a16z-global-js-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/build/js/single.970a4bf0454145343412.bundle.min.js?ver=1.03' id='a16z-single-js-js'></script>
+<script type='text/javascript' src='//maps.googleapis.com/maps/api/js?ver=3.0.0' id='google-maps-api-js'></script>
+<script type='text/javascript' src='//munchkin.marketo.net/munchkin.js?ver=610' id='marketo-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/build/js/marketoForms.aad818a15710e122e1a6.bundle.min.js?ver=1.01' id='marketo-forms-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/digitalpi-utm.js?ver=1.0' id='digitalpi-utm-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/grayscale.js?ver=1.0' id='grayscale-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/custom-scroll.min.js?ver=1.0' id='custom-scroll-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/bg-video.js?ver=1.0' id='bg-video-js'></script>
+<script type='text/javascript' src='https://a16z.com/wp-content/themes/a16z-2015/client/libs/mobile-hover.js?ver=1.0' id='mobile-hover-js'></script>
+<script type='text/javascript' src='https://stats.wp.com/e-202306.js' async='async' defer='defer'></script>
+<script type='text/javascript'>
+	_stq = window._stq || [];
+	_stq.push([ 'view', {v:'ext',j:'1:8.6',blog:'147973073',post:'284194',tz:'-8',srv:'a16z.com'} ]);
+	_stq.push([ 'clickTrackerInit', '147973073', '284194' ]);
+</script>
+
+</body>
+</html>
