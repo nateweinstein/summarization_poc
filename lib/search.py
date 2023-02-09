@@ -2,11 +2,14 @@ import torch
 import os
 from sentence_transformers import SentenceTransformer, util
 from transformers import pipeline
-from tinydb import TinyDB, Query
-db = TinyDB('../db/database.json')
-from get_web import strip_tags
 import time
 import re
+from .get_web import strip_tags
+from tinydb import TinyDB, Query
+
+dirname = os.path.dirname(__file__)
+db_file = os.path.join(dirname, '../db/database.json')
+db = TinyDB(db_file)
 
 # Load a pre-trained model semantic search model
 # Use this tutorial: https://medium.com/mlearning-ai/how-to-build-a-semantic-search-engine-using-python-5c68e8442df1
@@ -16,8 +19,9 @@ print('DOne!')
 
 
 print("Pipelining summarizer")
+summarizer_model = os.path.join(dirname, '../my_awesome_billsum_model')
 summarizer = pipeline("summarization", 
-    model="../my_awesome_billsum_model")
+    model=summarizer_model)
 print('finished')
 
 r = re.compile('<p(|\s+[^>]*)>(.*?)<\/p\s*>')
@@ -71,4 +75,4 @@ def search(author,term):
 
     
 
-search('Andrew Chen', 'what are the best marketplaces')
+# search('Andrew Chen', 'what are the best marketplaces')

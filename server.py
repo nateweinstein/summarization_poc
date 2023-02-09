@@ -3,13 +3,9 @@ from flask_cors import CORS
 
 from tinydb import TinyDB, Query
 db = TinyDB('db/database.json')
-from transformers import pipeline
 from lib.get_web import strip_tags, search_word_in_string
+from lib.search import search
 
-print("Starting summarizer")
-summarizer = pipeline("summarization", 
-    model="my_awesome_billsum_model")
-print('finished')
 
 app = Flask(__name__)
 cors = CORS(app)
@@ -36,19 +32,8 @@ def get_authors():
 def summarize():
     author = request.args.get('author')
     term = request.args.get('keyword')
+    contents, num_articles, relevant = search(author, term)
 
-    # Search db
-    entry = Query()
-    authorArticles = db.search(entry.author.matches('.*'+author+'.*') & entry.body.search('.*'+term+'.*'))
-    relevant = ''
-    num_articles = len(authorArticles)
-    for art in authorArticles:
-        cleaned = strip_tags(art['body'])
-        relevant = relevant +' '+ search_word_in_string(term, cleaned, 7000)    
-    
-
-    contents = summarizer(relevant)[0]['summary_text']
-    
     response = make_response({'content': contents,'num_articles': num_articles,'original_content':relevant})
     response.headers.add('Access-Control-Allow-Origin', '*')
 
