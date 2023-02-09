@@ -18,22 +18,22 @@ directory = 'crawled_html'
     # url, podcast name, DDG description, whether it's been crawled, contents of the article
 def generateArticles():
     
-    # This will crawl DDG for relevant urls w/ content and dump them into a temp DB
-    getLinks(search_terms, site, db)
+    # # This will crawl DDG for relevant urls w/ content and dump them into a temp DB
+    # getLinks(search_terms, site, db)
 
-    # Write all of the articles to a local folder as html
-    docs = db.all()
-    for d in docs:
-        crawlURL(d['url'], d['podcast'], directory)
+    # # Write all of the articles to a local folder as html
+    # docs = db.all()
+    # for d in docs:
+    #     crawlURL(d['url'], d['podcast'], directory)
     
     # Parse the local html files --> you need to tweak this fucnt
     for filename in os.listdir(directory):
         file = os.path.join(directory, filename)
         if os.path.isfile(file):
-            with open(file,'r') as f:
+            with open(file,'r',encoding = "ISO-8859-1") as f:
                 con = parseContent(f.read())
                 if con is not None:
-                    db.update({"body":con, "crawled":True}, Query().podcast==filename.replace('.html',''))
+                    db.update({"body":con['contents'],"author":con['authors'], "crawled":True}, Query().podcast==filename.replace('.html',''))
                     print(filename+ " updated!")    # 
 
 
@@ -60,8 +60,9 @@ def testSummarizer():
         print("DDG summary: "+a['contents'])
         print("URL: "+a['url'])
         print('\nAttempting to summarize\n\n')
-        print("Authors"+ a['body']['authors'])
+        print("Authors"+ str(a['body']['authors']))
         contents = strip_tags(a['body']['contents'])
+        contents = contents[:3500]
         summary = summarizer(contents)
         print(summary)
         print('\n\nGo again?')

@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+
+    <script>
+        $(document).ready(function () {
+            // 
+            $.ajax({
+                url: 'http://127.0.0.1:5000/authors',
+                type: 'GET',
+                dataType: "json",
+                success: function (data) {
+                    var authors = data.authors;
+                    console.log('got it', authors)
+                    authors.forEach(function (author) {
+                        $("#author-select").append($("<option>", {
+                            value: author,
+                            text: author
+                        }));
+                    });
+                },
+                error: function (error) {
+                    console.error("Error fetching authors:", error);
+                }
+            });
+
+            $("#author-select").change(function () {
+                var selectedAuthor = $(this).val();
+                $("#author-display").text(selectedAuthor);
+            });
+
+
+            $("#summarizer").submit(function (e) {
+                e.preventDefault();
+                var author = $("#author-select").val();
+                var kw = $("#keyword-input").val()
+
+                $.ajax({
+                    url: `http://127.0.0.1:5000/summarize?author=${author}&keyword=${kw}`,
+                    type: 'GET',
+                    dataType: "json",
+                    success: function (data) {
+                        console.log("GOT data", data);
+                        $('#summarized').text(data.content);
+                        // authors.forEach(function (author) {
+                        //     $("#author-select").append($("<option>", {
+                        //         value: author,
+                        //         text: author
+                        //     }));
+                        // });
+                    },
+                    error: function (error) {
+                        console.error("Error fetching authors:", error);
+                    }
+                });
+
+            });
+        });
+    </script>
+
+</head>
+
+<body>
+    <form id="summarizer">
+        <div>
+            <label for="author-select">Select an Author:</label>
+            <select id="author-select">
+                <option value="">--Select an Author--</option>
+            </select>
+        </div>
+        <div>
+            <label for="keyword-input">Enter a keyword:</label>
+            <input type="text" id="keyword-input">
+        </div>
+        <input type="submit" value="Submit">
+    </form>
+    <div id="summarized">
+
+    </div>
+
+</body>
+
+</html>

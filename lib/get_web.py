@@ -37,6 +37,7 @@ def parseContent(file):
         return None
 
 
+
 # Copied from here https://stackoverflow.com/questions/753052/strip-html-from-strings-in-python
 from io import StringIO
 from html.parser import HTMLParser
@@ -57,3 +58,11 @@ def strip_tags(html):
     s = MLStripper()
     s.feed(html)
     return s.get_data()
+
+def search_word_in_string(word, string, size):
+    index = string.find(word)
+    if index == -1:
+        return "Word not found in the string."
+    start = max(0, index - size // 2)
+    end = min(len(string), start + size)
+    return string[start:end]
