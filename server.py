@@ -1,4 +1,6 @@
 from flask import Flask, jsonify,make_response, request
+from flask_cors import CORS
+
 from tinydb import TinyDB, Query
 db = TinyDB('db/database.json')
 from transformers import pipeline
@@ -10,6 +12,7 @@ summarizer = pipeline("summarization",
 print('finished')
 
 app = Flask(__name__)
+cors = CORS(app)
 
 
 @app.route('/authors', methods=['GET'])
@@ -38,7 +41,7 @@ def summarize():
     entry = Query()
     authorArticles = db.search(entry.author.matches('.*'+author+'.*') & entry.body.search('.*'+term+'.*'))
     relevant = ''
-
+    num_articles = len(authorArticles)
     for art in authorArticles:
         cleaned = strip_tags(art['body'])
         relevant = relevant +' '+ search_word_in_string(term, cleaned, 7000)    
@@ -46,7 +49,7 @@ def summarize():
 
     contents = summarizer(relevant)[0]['summary_text']
     
-    response = make_response({'content': contents})
+    response = make_response({'content': contents,'num_articles': num_articles,'original_content':relevant})
     response.headers.add('Access-Control-Allow-Origin', '*')
 
     return response
