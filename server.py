@@ -2,7 +2,7 @@ from flask import Flask, jsonify,make_response, request
 from flask_cors import CORS
 
 from tinydb import TinyDB, Query
-db = TinyDB('db/database.json')
+db = TinyDB('db/parsed_db.json')
 from lib.get_web import strip_tags, search_word_in_string
 from lib.search import search
 
@@ -16,8 +16,10 @@ def get_authors():
     all = db.all()
     authors =[]
     for a in all:
+        print(a['author'])
         try:
-            authors.extend(a['author'].replace(', ', ',').split(','))
+            authors.append(a['author'])
+            # authors.extend(a['author'].replace(', ', ',').split(','))
         except:
             pass
     authors =sorted(set(authors))
