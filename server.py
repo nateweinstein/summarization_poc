@@ -16,7 +16,7 @@ def get_authors():
     all = db.all()
     authors =[]
     for a in all:
-        print(a['author'])
+        # print(a['author'])
         try:
             authors.append(a['author'])
             # authors.extend(a['author'].replace(', ', ',').split(','))

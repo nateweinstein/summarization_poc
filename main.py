@@ -32,13 +32,14 @@ def generateArticles():
         if os.path.isfile(file):
             with open(file,'r',encoding = "ISO-8859-1") as f:
                 con = parseContent(f.read())
-                if con is not None:
-                    db.update({"body":con['contents'],"author":con['authors'], "crawled":True}, Query().podcast==filename.replace('.html',''))
-                    print(filename+ " updated!")    # 
+
+                # if con is not None:
+                #     db.update({"body":con['contents'],"author":con['authors'], "crawled":True}, Query().podcast==filename.replace('.html',''))
+                #     print(filename+ " updated!")    # 
 
 
 # Uncomment to generate locally
-# generateArticles()
+generateArticles()
 
 
 # Create Summarizer object
@@ -68,3 +69,8 @@ def testSummarizer():
         print('\n\nGo again?')
 
 # testSummarizer()
+
+
+def searchSummarizer(author, keyword):
+    summarizer = pipeline("summarization", model="my_awesome_billsum_model")
+    

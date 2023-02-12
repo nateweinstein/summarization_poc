@@ -12,7 +12,7 @@ from .get_web import strip_tags
 from tinydb import TinyDB, Query
 
 dirname = os.path.dirname(__file__)
-db_file = os.path.join(dirname, '../db/database.json')
+db_file = os.path.join(dirname, '../db/parsed_db.json')
 db = TinyDB(db_file)
 
 # Load a pre-trained model semantic search model
@@ -46,30 +46,27 @@ def search(author,term):
     entry = Query()
 
     author = extract_entities(term)
-    input()
     author = author[0][0].title()
-    print("AUTHOR", author)
+    # print("AUTHOR", author)
     # Get articles from just the author
     authorArticles = db.search(entry.author.matches('.*'+author+'.*'))
     print("Done: {}".format(time.time()-t))
     relevant = []
     num_articles = len(authorArticles)
+    print("NUM", str(num_articles))
     print('regex')
 
     for art in authorArticles:
         # Get everything between a <p> tag
-        cleaned = r.findall(art['body'])
-        for clean in cleaned:
-            relevant.append(strip_tags(clean[1]))
-        # clean = [strip_tags(c) for c in cleaned]
-        # Remove extraneous html
-        # relevant.extend(clean)
+        relevant.append(art['content'])
     print("Done: {}".format(time.time()-t))
     print('model compile')
     # print(relevant)
     print('length: '+str(len(relevant)))
 
     # Encode the corpus and term for semantic search
+    term = term.replace(author.lower(), '')
+    print(term)
     compiled = model.encode(relevant)
     query = model.encode(term)
     print("Done: {}".format(time.time()-t))
