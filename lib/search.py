@@ -61,7 +61,8 @@ def search(author,term):
         relevant.append(art['content'])
     print("Done: {}".format(time.time()-t))
     print('model compile')
-    # print(relevant)
+    print(relevant)
+    input()
     print('length: '+str(len(relevant)))
 
     # Encode the corpus and term for semantic search

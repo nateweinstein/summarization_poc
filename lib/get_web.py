@@ -34,14 +34,17 @@ def parseContent(file):
         description = soup.find("meta", {"property":"og:description"})['content']
     except:
         return None
-        
+    
+    #  Some of these articles have transcripts, some don't.  For the ones that do, ascribe the comments to the author
+    i=0
     if None not in (transcript, authors):        
         # try to parse the 
         element = soup.body.find("div", {"class": "wp-content"})
         
-        print("TRANSCRIPT found")
+        print(title)
         print("AUTHORS", str(authors))
-        i=0
+        print("TRANSCRIPT found")
+        
         for aut in authors.split(', '):
             a = aut.split(' ')[0]+':'
             r = re.compile(a+'(.*?)<\/p\s*>')
@@ -56,6 +59,31 @@ def parseContent(file):
                 }
                 db.insert(entry)
                 i = i + 1
+        print("complete")
+    
+    elif len(authors)>2:
+        print(title)
+        print("AUTHORS", str(authors))
+        print("NO TRANSCRIPT found")        
+        element = soup.body.find("div", {"class": "wp-content"})
+        for aut in authors.split(', '):
+            # This string returns a tuple
+            r = re.compile('<p(|\s+[^>]*)>(.*?)<\/p\s*>')
+            cleaned = r.findall(str(element))
+            for c in cleaned:
+                entry = {
+                    'index':i,
+                    'author':aut,
+                    'title':title,
+                    'description':description,
+                    'content':strip_tags(c[1])
+                }
+                db.insert(entry)
+                i = i + 1
+        print("complete")
+    else:
+        print(title)
+        print("SKIPPED BITCHES")
 
     return
         # print("Element found!")

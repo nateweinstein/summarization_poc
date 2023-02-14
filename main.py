@@ -36,6 +36,7 @@ def generateArticles():
                 # if con is not None:
                 #     db.update({"body":con['contents'],"author":con['authors'], "crawled":True}, Query().podcast==filename.replace('.html',''))
                 #     print(filename+ " updated!")    # 
+    print("FINITO!!")
 
 
 # Uncomment to generate locally
