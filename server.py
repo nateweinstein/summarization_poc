@@ -29,6 +29,28 @@ def get_authors():
     return response
 
 
+@app.route('/articles', methods=['GET'])
+def get_articles():
+    entry  = Query()
+    author = request.args.get('author')
+    authorArticles = db.search(entry.author.matches('.*'+author+'.*'))
+    authors = []
+    for a in authorArticles:
+        # print(a['author'])
+        try:
+            authors.append(a['title'])
+            # authors.extend(a['author'].replace(', ', ',').split(','))
+        except:
+            pass
+    
+    articles =sorted(set(authors))
+    print("AUTHORS!!", authors)    
+    response = make_response({'articles': articles})
+    response.headers.add('Access-Control-Allow-Origin', '*')
+
+    return response
+
+
 
 @app.route('/summarize', methods=['GET'])
 def summarize():

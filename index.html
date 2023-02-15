@@ -26,9 +26,29 @@
                 }
             });
 
+
             $("#author-select").change(function () {
                 var selectedAuthor = $(this).val();
                 $("#author-display").text(selectedAuthor);
+                $.ajax({
+                    url: `http://127.0.0.1:5000/articles?author=${selectedAuthor}`,
+                    type: 'GET',
+                    dataType: "json",
+                    success: function (data) {
+                        var articles = data.articles;
+                        console.log('got it', articles)
+                        articles.forEach(function (article) {
+                            $("#article-select").append($("<option>", {
+                                value: article,
+                                text: article
+                            }));
+                        });
+                    },
+                    error: function (error) {
+                        console.error("Error fetching authors:", error);
+                    }
+                    });
+
             });
 
 
@@ -72,6 +92,12 @@
                 <option value="">--Select an Author--</option>
             </select>
         </div>
+        <div>
+            <label for="article-select">Select an Author:</label>
+            <select id="article-select">
+                <option value="">--Author's Articles--</option>
+            </select>
+        </div>        
         <div>
             <label for="keyword-input">Enter a keyword:</label>
             <input type="text" id="keyword-input">
