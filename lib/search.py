@@ -51,8 +51,8 @@ def search(author,term):
     entry = Query()
 
     author = extract_entities(term)
-    print(author)
-    input()
+    # print(author)
+    # input()
     author = author[0][0].title()
     # print("AUTHOR", author)
     # Get articles from just the author
