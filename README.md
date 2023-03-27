@@ -11,7 +11,6 @@ run ``jupyter-notebook``
 
 -This will open your browser
 -In the top menu, under Cells, hit "Run all cells"
--This will build out the summarization model in 'my_awesome_billsum_model'
 
 
 <!-- The repo already has the content, but to recreate it-->
